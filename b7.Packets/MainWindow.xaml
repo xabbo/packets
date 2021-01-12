@@ -4,9 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:b7.Packets"
+        xmlns:view="clr-namespace:b7.Packets.View"
+        xmlns:viewModel="clr-namespace:b7.Packets.ViewModel"
         mc:Ignorable="d"
-        Title="b7 packets" Height="450" Width="800">
+        d:DataContext="{d:DesignInstance Type={x:Type viewModel:MainViewManager}}"
+        Title="b7 packets" Height="450" Width="800"
+        Topmost="{Binding ElementName=checkBoxTopMost, Path=IsChecked}"
+        FontSize="11" FontFamily="Hack,Consolas">
     <Grid>
-        
+        <CheckBox x:Name="checkBoxTopMost"
+                  Margin="6"
+                  HorizontalAlignment="Right" VerticalAlignment="Top"
+                  VerticalContentAlignment="Center"
+                  Opacity="0.33" Panel.ZIndex="9999"
+                  Content="Topmost" />
+        <TabControl x:Name="tabControl" Margin="4">
+            <TabItem x:Name="logTab" Header="Log">
+                <view:PacketLogView x:Name="packetLogView" />
+            </TabItem>
+            <TabItem x:Name="structureTab" Header="Structure">
+                <view:StructureView x:Name="structuralizerView" />
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

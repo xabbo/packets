@@ -2,8 +2,31 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:b7.Packets"
-             StartupUri="MainWindow.xaml">
+             xmlns:svc="clr-namespace:b7.Packets.Services"
+             Startup="Application_Startup">
     <Application.Resources>
-         
+        <svc:ServiceLocator x:Key="Locator" />
+        <!-- Colors -->
+        <!-- Bool -->
+        <SolidColorBrush x:Key="BoolForeground" Color="DarkMagenta" />
+        <SolidColorBrush x:Key="BoolBackground" Color="Magenta" Opacity="0.2" />
+        <!-- Byte -->
+        <SolidColorBrush x:Key="ByteForeground" Color="DarkBlue" />
+        <SolidColorBrush x:Key="ByteBackground" Color="DeepSkyBlue" Opacity="0.2" />
+        <!-- Short -->
+        <SolidColorBrush x:Key="ShortForeground" Color="DarkGreen" />
+        <SolidColorBrush x:Key="ShortBackground" Color="Green" Opacity="0.2" />
+        <!-- Int -->
+        <SolidColorBrush x:Key="IntForeground" Color="DarkCyan" />
+        <SolidColorBrush x:Key="IntBackground" Color="DeepSkyBlue" Opacity="0.33" />
+        <!-- Long -->
+        <SolidColorBrush x:Key="LongForeground" Color="DarkOrange" />
+        <SolidColorBrush x:Key="LongBackground" Color="Orange" Opacity="0.2" />
+        <!-- Float -->
+        <SolidColorBrush x:Key="FloatForeground" Color="Black" />
+        <SolidColorBrush x:Key="FloatBackground" Color="Gray" Opacity="0.2" />
+        <!-- String -->
+        <SolidColorBrush x:Key="StringForeground" Color="DarkRed" />
+        <SolidColorBrush x:Key="StringBackground" Color="Red" Opacity="0.2" />
     </Application.Resources>
 </Application>

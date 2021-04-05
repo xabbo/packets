@@ -7,11 +7,11 @@ using b7.Packets.ViewModel;
 
 namespace b7.Packets.View
 {
-    public partial class PacketLogView : UserControl
+    public partial class LogView : UserControl
     {
         protected LogViewManager Manager => (LogViewManager)DataContext;
 
-        public PacketLogView()
+        public LogView()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace b7.Packets.View
         private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (sender is not FrameworkElement element ||
-                element.DataContext is not PacketLogViewModel packetLog)
+                element.DataContext is not PacketLogViewModel)
             {
                 return;
             }

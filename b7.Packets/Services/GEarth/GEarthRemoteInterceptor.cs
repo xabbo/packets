@@ -7,15 +7,18 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Extensions.Configuration;
+
 using b7.Packets.Common.Messages;
 using b7.Packets.Common.Protocol;
-using b7.Packets.Common.Services;
 
-namespace b7.Packets.Services.Remote.GEarth
+using b7.Packets.Services;
+
+namespace b7.Modules.Interceptor.GEarth
 {
-    public class GEarthRemoteManager : IRemoteInterceptor
+    public class GEarthRemoteInterceptor : IRemoteInterceptor
     {
-        private static readonly Encoding _encoding = Encoding.GetEncoding("ISO-8859-1");
+        private static readonly Encoding _encoding = Encoding.Latin1;
         private static readonly byte[]
             _toClientBytes = _encoding.GetBytes("TOCLIENT"),
             _toServerBytes = _encoding.GetBytes("TOSERVER");
@@ -58,9 +61,7 @@ namespace b7.Packets.Services.Remote.GEarth
         public event EventHandler? Disconnected;
         protected virtual void OnDisconnected() => Disconnected?.Invoke(this, EventArgs.Empty);
 
-
         public event EventHandler? Initialized;
-        
         public event EventHandler? ConnectionStart;
         public event EventHandler? ConnectionEnd;
         public event EventHandler<InterceptArgs>? Intercepted;
@@ -70,11 +71,15 @@ namespace b7.Packets.Services.Remote.GEarth
 
         public bool IsRunning { get; private set; }
 
-        public GEarthRemoteManager(IMessageManager messages, GEarthOptions options)
+        public int Port { get; private set; }
+
+        public GEarthRemoteInterceptor(IConfiguration config, IMessageManager messages, GEarthOptions options)
         {
             _messages = messages;
 
             Options = options;
+
+            Port = config.GetValue<int>("Interceptor:Port");
         }
 
         public void Start()
@@ -108,7 +113,7 @@ namespace b7.Packets.Services.Remote.GEarth
                     try
                     {
                         _client = new TcpClient();
-                        await _client.ConnectAsync(IPAddress.Loopback, Options.Port);
+                        await _client.ConnectAsync(IPAddress.Loopback, Port);
                         OnConnected();
                     }
                     catch (Exception ex)
@@ -249,7 +254,7 @@ namespace b7.Packets.Services.Remote.GEarth
             response.WriteByte((byte)((isModified || args.IsModified) ? '1' : '0'));
             response.WriteInt(2 + args.Packet.Length);
             response.WriteShort(args.Packet.Header);
-            response.WriteBytes(args.Packet.GetBuffer());
+            response.WriteBytes(args.Packet.GetBuffer().Span);
 
             response.Position = 0;
             response.WriteInt(response.Length - 4);
@@ -264,6 +269,14 @@ namespace b7.Packets.Services.Remote.GEarth
 
         private Task OnConnectionStart(Packet packet)
         {
+            string host = packet.ReadString();
+            int port = packet.ReadInt();
+            string version = packet.ReadString();
+            string harbleMessagesPath = packet.ReadString();
+            string clientType = packet.ReadString();
+
+            Debug.WriteLine($"[ConnectionStart] {host}:{port} {version} {harbleMessagesPath} {clientType}");
+
             ConnectionStart?.Invoke(this, EventArgs.Empty);
             return Task.CompletedTask;
         }
@@ -299,7 +312,7 @@ namespace b7.Packets.Services.Remote.GEarth
             requestPacket.WriteInt(6 + packet.Length);
             requestPacket.WriteInt(2 + packet.Length);
             requestPacket.WriteShort(packet.Header);
-            requestPacket.WriteBytes(packet.GetBuffer());
+            requestPacket.WriteBytes(packet.GetBuffer().Span);
 
             return SendAsync(requestPacket);
         }

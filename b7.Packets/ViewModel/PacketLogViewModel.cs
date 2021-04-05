@@ -1,11 +1,13 @@
 ﻿using System;
 
+using GalaSoft.MvvmLight;
+
 using b7.Packets.Common.Messages;
 using b7.Packets.Common.Protocol;
 
 namespace b7.Packets.ViewModel
 {
-    public class PacketLogViewModel : ViewModelBase
+    public class PacketLogViewModel : ObservableObject
     {
         public IReadOnlyPacket Packet { get; }
 

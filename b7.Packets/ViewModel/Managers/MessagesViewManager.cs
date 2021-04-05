@@ -7,11 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
+using GalaSoft.MvvmLight;
+
 using b7.Packets.Services;
 
 namespace b7.Packets.ViewModel
 {
-    public class MessagesViewManager : ViewModelBase
+    public class MessagesViewManager : ObservableObject
     {
         private readonly IMessageManager _messageManager;
 

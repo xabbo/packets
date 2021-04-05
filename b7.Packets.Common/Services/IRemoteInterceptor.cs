@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using b7.Packets.Common.Messages;
 using b7.Packets.Common.Protocol;
 
-namespace b7.Packets.Common.Services
+namespace b7.Modules.Interceptor
 {
     public interface IRemoteInterceptor
     {
@@ -28,6 +28,10 @@ namespace b7.Packets.Common.Services
         /// Invoked when the extension has been initialized by the remote interceptor.
         /// </summary>
         event EventHandler? Initialized;
+        /// <summary>
+        /// Invoked when the extension is selected in the remote interceptor UI.
+        /// </summary>
+        event EventHandler? Clicked;
         /// <summary>
         /// Invoked when a connection to the game server has been established.
         /// </summary>

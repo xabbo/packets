@@ -4,7 +4,7 @@ namespace b7.Packets
 {
     public class StructureItem
     {
-        public StructureTypes Type { get; init; }
+        public TypeCode Type { get; init; }
         public int Offset { get; init; }
         public int Length { get; init; }
         public object? Value { get; init; }

@@ -11,6 +11,5 @@ namespace b7.Packets.Common.Parsers
         float ReadFloat(string? name = null);
         long ReadLong(string? name = null);
         string ReadString(string? name = null);
-        byte[] ReadBytes(string? name = null);
     }
 }

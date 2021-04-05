@@ -1,30 +1,32 @@
 ﻿using System;
 
+using GalaSoft.MvvmLight;
+
 namespace b7.Packets.ViewModel
 {
     public class ByteSpanViewModel : GridItemViewModel
     {
         public DataRowViewModel DataRows { get; }
 
-        private StructureTypes _structureType;
-        public StructureTypes StructureType
+        private TypeCode _type;
+        public TypeCode Type
         {
-            get => _structureType;
-            set => _set(ref _structureType, value);
+            get => _type;
+            set => Set(ref _type, value);
         }
 
         private bool _openLeft;
         public bool OpenLeft
         {
             get => _openLeft;
-            set => _set(ref _openLeft, value);
+            set => Set(ref _openLeft, value);
         }
 
         private bool _openRight;
         public bool OpenRight
         {
             get => _openRight;
-            set => _set(ref _openRight, value);
+            set => Set(ref _openRight, value);
         }
 
         public ByteSpanViewModel(DataRowViewModel byteRow)

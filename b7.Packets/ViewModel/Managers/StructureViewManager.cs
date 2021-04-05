@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
 using b7.Packets.Common.Protocol;
 
 using b7.Packets.Services;
+using System.Windows.Data;
+using System.Windows.Media;
 
 namespace b7.Packets.ViewModel
 {
-    public class StructureViewManager : ViewModelBase
+    public class StructureViewManager : ObservableObject
     {
         private readonly IContext _context;
 
@@ -21,71 +24,72 @@ namespace b7.Packets.ViewModel
         private ReadOnlyMemory<byte> _data;
 
         private Dictionary<int, List<ByteSpanViewModel>> _spanMap;
+        private readonly ObservableCollection<DataRowViewModel> _dataRows;
 
-        public ObservableCollection<DataRowViewModel> DataRows { get; set; }
+        public CompositeCollection DataRows { get; set; }
         public ObservableCollection<StructureItemViewModel> StructureItems { get; set; }
 
         private bool _canAddBool;
         public bool CanAddBool
         {
             get => _canAddBool;
-            set => _set(ref _canAddBool, value);
+            set => Set(ref _canAddBool, value);
         }
 
         private bool _canAddByte;
         public bool CanAddByte
         {
             get => _canAddByte;
-            set => _set(ref _canAddByte, value);
+            set => Set(ref _canAddByte, value);
         }
 
         private bool _canAddShort;
         public bool CanAddShort
         {
             get => _canAddShort;
-            set => _set(ref _canAddShort, value);
+            set => Set(ref _canAddShort, value);
         }
 
         private bool _canAddInt;
         public bool CanAddInt
         {
             get => _canAddInt;
-            set => _set(ref _canAddInt, value);
+            set => Set(ref _canAddInt, value);
         }
 
         private bool _canAddLong;
         public bool CanAddLong
         {
             get => _canAddLong;
-            set => _set(ref _canAddLong, value);
+            set => Set(ref _canAddLong, value);
         }
 
         private bool _canAddFloat;
         public bool CanAddFloat
         {
             get => _canAddFloat;
-            set => _set(ref _canAddFloat, value);
+            set => Set(ref _canAddFloat, value);
         }
 
         private bool _canAddString;
         public bool CanAddString
         {
             get => _canAddString;
-            set => _set(ref _canAddString, value);
+            set => Set(ref _canAddString, value);
         }
 
         private bool _canUndo;
         public bool CanUndo
         {
             get => _canUndo;
-            set => _set(ref _canUndo, value);
+            set => Set(ref _canUndo, value);
         }
 
         private bool _canClear;
         public bool CanClear
         {
             get => _canClear;
-            set => _set(ref _canClear, value);
+            set => Set(ref _canClear, value);
         }
 
         public ICommand AddBoolCommand { get; }
@@ -104,24 +108,34 @@ namespace b7.Packets.ViewModel
             _spanMap = new Dictionary<int, List<ByteSpanViewModel>>();
 
             _data = Array.Empty<byte>();
+            _dataRows = new ObservableCollection<DataRowViewModel>();
 
-            DataRows = new ObservableCollection<DataRowViewModel>();
+            DataRowViewModel byteOffsets = new DataRowViewModel(0) { ShowOffset = false };
+            for (int i = 0; i < 16; i++)
+                byteOffsets.Bytes.Add(new ByteViewModel(i) { Brush = Brushes.LightSlateGray });
+
+            DataRows = new CompositeCollection
+            {
+                new CollectionContainer() { Collection = new[] { byteOffsets } },
+                new CollectionContainer() { Collection = _dataRows }
+            };
+
             StructureItems = new ObservableCollection<StructureItemViewModel>();
 
-            AddBoolCommand = new RelayCommand(AddBoolExecuted);
-            AddByteCommand = new RelayCommand(AddByteExecuted);
-            AddShortCommand = new RelayCommand(AddShortExecuted);
-            AddIntCommand = new RelayCommand(AddIntExecuted);
-            AddLongCommand = new RelayCommand(AddLongExecuted);
-            AddFloatCommand = new RelayCommand(AddFloatExecuted);
-            AddStringCommand = new RelayCommand(AddStringExecuted);
-            UndoCommand = new RelayCommand(UndoExecuted);
-            ClearCommand = new RelayCommand(ClearExecuted);
+            AddBoolCommand = new RelayCommand(AddBool);
+            AddByteCommand = new RelayCommand(AddByte);
+            AddShortCommand = new RelayCommand(AddShort);
+            AddIntCommand = new RelayCommand(AddInt);
+            AddLongCommand = new RelayCommand(AddLong);
+            AddFloatCommand = new RelayCommand(AddFloat);
+            AddStringCommand = new RelayCommand(AddString);
+            UndoCommand = new RelayCommand(Undo);
+            ClearCommand = new RelayCommand(Clear);
 
             Messenger.Default.Register<GenericMessage<PacketLogViewModel>>(this, x => LoadPacket(x.Content));
         }
 
-        private void UndoExecuted()
+        private void Undo()
         {
             if (_packet == null) return;
 
@@ -144,13 +158,13 @@ namespace b7.Packets.ViewModel
             Update();
         }
 
-        private void ClearExecuted()
+        private void Clear()
         {
             if (_packet != null)
                 _packet.Position = 0;
 
             StructureItems.Clear();
-            foreach (var row in DataRows)
+            foreach (var row in _dataRows)
                 row.Spans.Clear();
 
             Update();
@@ -158,12 +172,12 @@ namespace b7.Packets.ViewModel
 
         public void LoadPacket(PacketLogViewModel packetLog)
         {
-           _packet = packetLog.Packet;
+            _packet = packetLog.Packet;
             _packet.Position = 0;
-            _data = new ReadOnlyMemory<byte>(_packet.GetBuffer().ToArray());
+            _data = _packet.GetBuffer();
 
             _spanMap.Clear();
-            DataRows.Clear();
+            _dataRows.Clear();
             StructureItems.Clear();
 
             DataRowViewModel? currentRow = null;
@@ -172,15 +186,15 @@ namespace b7.Packets.ViewModel
                 if (i % 16 == 0)
                 {
                     if (currentRow != null)
-                        DataRows.Add(currentRow);
-                    currentRow = new DataRowViewModel();
+                        _dataRows.Add(currentRow);
+                    currentRow = new DataRowViewModel(i);
                 }
 
                 currentRow?.Bytes.Add(new ByteViewModel(_data, i));
             }
 
             if (currentRow != null)
-                DataRows.Add(currentRow);
+                _dataRows.Add(currentRow);
 
             Update();
         }
@@ -212,7 +226,7 @@ namespace b7.Packets.ViewModel
             }
         }
 
-        private void AddStructureItem(StructureTypes type)
+        private void AddStructureItem(TypeCode type)
         {
             if (_packet == null) return;
 
@@ -222,26 +236,26 @@ namespace b7.Packets.ViewModel
             int offset = _packet.Position;
             switch (type)
             {
-                case StructureTypes.Bool:
+                case TypeCode.Boolean:
                     value = _packet.ReadBool();
                     stringValue = value.ToString()?.ToLower() ?? "?";
                     break;
-                case StructureTypes.Byte:
+                case TypeCode.Byte:
                     value = _packet.ReadByte();
                     break;
-                case StructureTypes.Short:
+                case TypeCode.Int16:
                     value = _packet.ReadShort();
                     break;
-                case StructureTypes.Int:
+                case TypeCode.Int32:
                     value = _packet.ReadInt();
                     break;
-                case StructureTypes.Long:
-                    value = _packet.ReadLong();
-                    break;
-                case StructureTypes.Float:
+                case TypeCode.Single:
                     value = _packet.ReadFloat();
                     break;
-                case StructureTypes.String:
+                case TypeCode.Int64:
+                    value = _packet.ReadLong();
+                    break;
+                case TypeCode.String:
                     value = _packet.ReadString();
                     break;
                 default:
@@ -255,7 +269,7 @@ namespace b7.Packets.ViewModel
 
             var structureItem = new StructureItemViewModel()
             {
-                StructureType = type,
+                Type = type,
                 Offset = offset,
                 Length = length,
                 ValueString = stringValue
@@ -291,10 +305,10 @@ namespace b7.Packets.ViewModel
                     colSpan = (offset + length - 1) % 16 + 1;
                 }
 
-                DataRowViewModel row = DataRows[baseRow + i];
+                DataRowViewModel row = _dataRows[baseRow + i];
                 ByteSpanViewModel byteSpan = new(row)
                 {
-                    StructureType = type,
+                    Type = type,
                     Column = col,
                     ColumnSpan = colSpan,
                     OpenLeft = !isStart,
@@ -308,47 +322,47 @@ namespace b7.Packets.ViewModel
             Update();
         }
 
-        private void AddBoolExecuted()
+        private void AddBool()
         {
             if (_packet?.CanReadBool() != true) return;
 
-            AddStructureItem(StructureTypes.Bool);
+            AddStructureItem(TypeCode.Boolean);
         }
 
-        private void AddByteExecuted()
+        private void AddByte()
         {
             if (_packet?.CanReadByte() != true) return;
-            AddStructureItem(StructureTypes.Byte);
+            AddStructureItem(TypeCode.Byte);
         }
 
-        private void AddShortExecuted()
+        private void AddShort()
         {
             if (_packet?.CanReadShort() != true) return;
-            AddStructureItem(StructureTypes.Short);
+            AddStructureItem(TypeCode.Int16);
         }
 
-        private void AddIntExecuted()
+        private void AddInt()
         {
             if (_packet?.CanReadInt() != true) return;
-            AddStructureItem(StructureTypes.Int);
+            AddStructureItem(TypeCode.Int32);
         }
 
-        private void AddLongExecuted()
-        {
-            if (_packet?.Available < 8) return;
-            AddStructureItem(StructureTypes.Long);
-        }
-
-        private void AddFloatExecuted()
+        private void AddFloat()
         {
             if (_packet?.Available < 4) return;
-            AddStructureItem(StructureTypes.Float);
+            AddStructureItem(TypeCode.Single);
         }
 
-        private void AddStringExecuted()
+        private void AddLong()
+        {
+            if (_packet?.Available < 8) return;
+            AddStructureItem(TypeCode.Int64);
+        }
+
+        private void AddString()
         {
             if (_packet?.CanReadString() != true) return;
-            AddStructureItem(StructureTypes.String);
+            AddStructureItem(TypeCode.String);
         }
     }
 }

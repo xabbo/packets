@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using Microsoft.Extensions.Configuration;
+
 using b7.Packets.Common.Messages;
 using b7.Util;
 
@@ -16,9 +18,9 @@ namespace b7.Packets.Services
             _inNameMap = new(StringComparer.OrdinalIgnoreCase),
             _outNameMap = new(StringComparer.OrdinalIgnoreCase);
 
-        public MessageManager(string filePath)
+        public MessageManager(IConfiguration config)
         {
-            Ini messages = Ini.Load(filePath);
+            Ini messages = Ini.Load(config.GetValue<string>("MessagesPath"));
 
             foreach (var (name, valueString) in messages["Incoming"])
             {

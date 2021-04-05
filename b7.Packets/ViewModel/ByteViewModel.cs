@@ -6,7 +6,7 @@ namespace b7.Packets.ViewModel
 {
     public class ByteViewModel : GridItemViewModel
     {
-        private readonly ReadOnlyMemory<byte> _buffer;
+        /*private readonly ReadOnlyMemory<byte> _buffer;
         private readonly int _position;
 
         public byte Value
@@ -29,16 +29,38 @@ namespace b7.Packets.ViewModel
         public Brush Brush
         {
             get => brush;
-            set => _set(ref brush, value);
+            set => Set(ref brush, value);
         }
 
         public ByteViewModel(ReadOnlyMemory<byte> buffer, int position)
         {
-            this._buffer = buffer;
-            this._position = position;
+            _buffer = buffer;
+            _position = position;
 
             Column = position % 16;
             ColumnSpan = 1;
+        }*/
+
+        public Brush Brush { get; set; } = Brushes.DarkSlateGray;
+
+        public byte Value { get; }
+        public string HexValue { get; }
+        public char AsciiValue { get; }
+
+        public ByteViewModel(int offset)
+        {
+            Value = (byte)offset;
+            HexValue = offset.ToString("x");
+            AsciiValue = HexValue[0];
+            Column = offset % 16;
+        }
+
+        public ByteViewModel(ReadOnlyMemory<byte> buffer, int offset)
+        {
+            Value = buffer.Span[offset];
+            HexValue = Value.ToString("x2");
+            AsciiValue = StringUtil.GetAsciiChar(Value);
+            Column = offset % 16;
         }
     }
 }

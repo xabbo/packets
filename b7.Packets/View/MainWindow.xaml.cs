@@ -19,6 +19,8 @@ namespace b7.Packets
 
         public MainWindow(MainViewManager mainViewManager)
         {
+            DataContext = mainViewManager;
+
             _mainViewManager = mainViewManager;
             _mainViewManager.OpenStructureView += (s, e) => tabControl.SelectedItem = structureTab;
 

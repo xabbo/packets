@@ -1,59 +1,80 @@
 ﻿using System;
 using System.Windows;
+using System.Diagnostics;
 
-using Ninject;
-using Ninject.Modules;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 using b7.Packets.Services;
 using b7.Packets.ViewModel;
-using b7.Packets.Modules;
+using b7.Packets.Util;
+using b7.Modules.Interceptor.GEarth;
+using b7.Modules.Interceptor;
 
 namespace b7.Packets
 {
     public partial class App : Application
     {
-        private readonly IKernel _kernel;
+        private IHost? _host = null;
 
-        public App()
-        {
-            _kernel = new StandardKernel();
-        }
+        public App() { }
 
-        private void InitializeKernel(string[] args)
+        private void ConfigureServices(HostBuilderContext context, IServiceCollection services)
         {
-            int port = 9092;
-            if (args.Length == 2)
+            services.AddSingleton<IContext, WpfContext>(
+                provider => ActivatorUtilities.CreateInstance<WpfContext>(provider, Dispatcher)
+            );
+
+            // services.AddSingleton<IMessageManager, MessageManager>();
+
+            services.AddSingleton(new GEarthOptions
             {
-                if (args[0] == "-p")
-                {
-                    port = int.Parse(args[1]);
-                }
+                Title = "b7 packets",
+                Description = "a packet logger",
+                Version = "1.0.0",
+                Author = "b7"
+            });
+
+            string interceptorService = context.Configuration.GetValue<string>("Interceptor:Service");
+            switch (interceptorService.ToLower())
+            {
+                case "g-earth":
+                    {
+                        services.AddSingleton<IRemoteInterceptor, GEarthRemoteInterceptor>();
+                    }
+                    break;
+                default:
+                    throw new Exception($"Unsupported interceptor service: {interceptorService}");
             }
 
-            _kernel.Load((INinjectModule)FindResource("Locator"));
+            services.AddSingleton<IContext>(new WpfContext(Dispatcher));
 
-            _kernel.Bind<IContext>().ToConstant(new WpfContext(Dispatcher));
-            _kernel.Bind<IMessageManager>().To<MessageManager>().InSingletonScope()
-                .WithConstructorArgument("filePath", "messages.ini");
+            // services.AddSingleton<IMessageManager, MessageManager>();
+            services.AddSingleton<IMessageManager, HarbleMessageManager>();
 
-            _kernel.Load(new GEarthModule(port));
-            // _kernel.Load(new TanjiModule(port));
+            services.AddSingleton<MainViewManager>();
+            services.AddSingleton<LogViewManager>();
+            services.AddSingleton<StructureViewManager>();
 
-            _kernel.Bind<MainViewManager>().ToSelf().InSingletonScope();
-            _kernel.Bind<StructureViewManager>().ToSelf().InSingletonScope();
+            services.AddSingleton<MainWindow>();
         }
 
-        private void ComposeObjects()
+        private IHostBuilder CreateHostBuilder(string[] args)
         {
-            Current.MainWindow = _kernel.Get<MainWindow>();
+            return Host.CreateDefaultBuilder(args)
+                .ConfigureServices(ConfigureServices);
         }
 
-        private void Application_Startup(object sender, StartupEventArgs e)
+        protected override async void OnStartup(StartupEventArgs e)
         {
             try
             {
-                InitializeKernel(e.Args);
-                ComposeObjects();
+                _host = CreateHostBuilder(e.Args).Build();
+
+                await _host.StartAsync();
+
+                Current.MainWindow = _host.Services.GetRequiredService<MainWindow>();
             }
             catch (Exception ex)
             {
@@ -66,6 +87,40 @@ namespace b7.Packets
             }
 
             Current.MainWindow.Show();
+
+            base.OnStartup(e);
+        }
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            if (_host != null)
+            {
+                using (_host)
+                {
+                    await _host.StopAsync(TimeSpan.FromSeconds(10));
+                }
+            }
+
+            base.OnExit(e);
+        }
+
+        static int TryGetPortByProcess(string processName, string? windowTitle = null)
+        {
+            try
+            {
+                foreach (var info in Netstat.GetTcpListeners())
+                {
+                    if (info.Process?.ProcessName.Equals(processName, StringComparison.OrdinalIgnoreCase) == true &&
+                        (windowTitle is null || info.Process.MainWindowTitle.StartsWith(windowTitle, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        Debug.WriteLine($"Found process {info.Process.ProcessName} \"{info.Process.MainWindowTitle}\" listening on port {info.LocalPort}");
+                        return info.LocalPort;
+                    }
+                }
+
+                return -1;
+            }
+            catch { return -1; }
         }
     }
 }

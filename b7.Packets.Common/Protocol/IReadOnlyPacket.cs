@@ -7,9 +7,9 @@ namespace b7.Packets.Common.Protocol
     public interface IReadOnlyPacket
     {
         /// <summary>
-        /// Gets the data in the packet as a <see cref="ReadOnlySpan{T}"/>.
+        /// Gets the data in the packet as <see cref="ReadOnlyMemory{T}"/>.
         /// </summary>
-        ReadOnlySpan<byte> GetBuffer();
+        ReadOnlyMemory<byte> GetBuffer();
 
         /// <summary>
         /// Copies the data of this <see cref="Packet"/> into a <see cref="Span{T}"/>.

@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:b7.Packets.View"
              xmlns:global="clr-namespace:b7.Packets"
              xmlns:viewModel="clr-namespace:b7.Packets.ViewModel"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance Type={x:Type viewModel:StructureViewManager}}"
-             DataContext="{Binding Source={StaticResource Locator}, Path=StructureView}"
              UseLayoutRounding="True"
              Background="White"
              FontFamily="Hack,Consolas" FontSize="11">
@@ -35,31 +35,31 @@
                     <Setter Property="CornerRadius" Value="0" />
                 </MultiDataTrigger>
                 <!-- Colors -->
-                <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Bool}">
+                <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Boolean}">
                     <Setter Property="Background" Value="{StaticResource BoolBackground}" />
                     <Setter Property="BorderBrush" Value="{StaticResource BoolForeground}" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Byte}">
+                <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Byte}">
                     <Setter Property="Background" Value="{StaticResource ByteBackground}" />
                     <Setter Property="BorderBrush" Value="{StaticResource ByteForeground}" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Short}">
+                <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Int16}">
                     <Setter Property="Background" Value="{StaticResource ShortBackground}" />
                     <Setter Property="BorderBrush" Value="{StaticResource ShortForeground}" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Int}">
+                <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Int32}">
                     <Setter Property="Background" Value="{StaticResource IntBackground}" />
                     <Setter Property="BorderBrush" Value="{StaticResource IntForeground}" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Long}">
-                    <Setter Property="Background" Value="{StaticResource LongBackground}" />
-                    <Setter Property="BorderBrush" Value="{StaticResource LongForeground}" />
-                </DataTrigger>
-                <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Float}">
+                <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Single}">
                     <Setter Property="Background" Value="{StaticResource FloatBackground}" />
                     <Setter Property="BorderBrush" Value="{StaticResource FloatForeground}" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.String}">
+                <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Int64}">
+                    <Setter Property="Background" Value="{StaticResource LongBackground}" />
+                    <Setter Property="BorderBrush" Value="{StaticResource LongForeground}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.String}">
                     <Setter Property="Background" Value="{StaticResource StringBackground}" />
                     <Setter Property="BorderBrush" Value="{StaticResource StringForeground}" />
                 </DataTrigger>
@@ -86,25 +86,34 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="440" />
             <ColumnDefinition Width="2" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ItemsControl Margin="2" ItemsSource="{Binding DataRows}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible"
+        <ItemsControl Margin="2" ItemsSource="{Binding DataRows}"
+                      ScrollViewer.CanContentScroll="True"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible"
                       FontSize="11">
 
             <ItemsControl.Resources>
                 <DataTemplate DataType="{x:Type viewModel:DataRowViewModel}">
                     <Grid>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="OffsetGroup" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="HexGroup" />
                             <ColumnDefinition Width="8" />
                             <ColumnDefinition Width="Auto" SharedSizeGroup="AsciiGroup" />
                         </Grid.ColumnDefinitions>
-
+                        <!-- Offset -->
+                        <TextBlock Grid.Column="0"
+                                   Margin="0,0,4,0"
+                                   VerticalAlignment="Center"
+                                   Foreground="LightSlateGray"
+                                   Visibility="{Binding ShowOffset, Converter={StaticResource BoolToVisibilityConverter}}"
+                                   Text="{Binding Offset, StringFormat=x4}" />
                         <!-- Hex view -->
-                        <ItemsControl Grid.Column="0" ItemsSource="{Binding Items}">
+                        <ItemsControl Grid.Column="1" ItemsSource="{Binding Items}">
                             <ItemsControl.ItemContainerStyle>
                                 <Style>
                                     <Setter Property="Grid.Column" Value="{Binding Column}" />
@@ -117,7 +126,10 @@
                                 <DataTemplate DataType="{x:Type viewModel:ByteViewModel}">
                                     <TextBlock
                                             Margin="2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
                                             Text="{Binding Value, StringFormat=x2}" 
+                                            Foreground="{Binding Brush}"
                                             ToolTip="{StaticResource ByteInfo}"
                                             ToolTipService.IsEnabled="False"
                                             ToolTipService.InitialShowDelay="0"
@@ -158,10 +170,14 @@
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
 
-                        <Canvas Grid.Column="1" Width="1" Margin="0,0,3,0" HorizontalAlignment="Center" Background="LightGray" />
+                        <!-- Hex / ASCII separator -->
+                        <Canvas Grid.Column="2"
+                                HorizontalAlignment="Center"
+                                Width="1"
+                                Background="LightGray" />
 
                         <!-- ASCII view -->
-                        <ItemsControl Grid.Column="2" ItemsSource="{Binding Items}">
+                        <ItemsControl Grid.Column="3" ItemsSource="{Binding Items}">
                             <ItemsControl.ItemContainerStyle>
                                 <Style>
                                     <Setter Property="Grid.Column" Value="{Binding Column}" />
@@ -174,6 +190,9 @@
                                 <DataTemplate DataType="{x:Type viewModel:ByteViewModel}">
                                     <TextBlock
                                             Margin="-1,1,0,2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Foreground="{Binding Brush}"
                                             Text="{Binding AsciiValue}" />
                                 </DataTemplate>
                                 <DataTemplate DataType="{x:Type viewModel:ByteSpanViewModel}">
@@ -250,25 +269,25 @@
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Foreground" Value="DarkSlateGray" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Bool}">
+                            <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Boolean}">
                                 <Setter Property="Foreground" Value="{StaticResource BoolForeground}" />
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Byte}">
+                            <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Byte}">
                                 <Setter Property="Foreground" Value="{StaticResource ByteForeground}" />
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Short}">
+                            <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Int16}">
                                 <Setter Property="Foreground" Value="{StaticResource ShortForeground}" />
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Int}">
+                            <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Int32}">
                                 <Setter Property="Foreground" Value="{StaticResource IntForeground}" />
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Long}">
-                                <Setter Property="Foreground" Value="{StaticResource LongForeground}" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.Float}">
+                            <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Single}">
                                 <Setter Property="Foreground" Value="{StaticResource FloatForeground}" />
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding StructureType}" Value="{x:Static global:StructureTypes.String}">
+                            <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.Int64}">
+                                <Setter Property="Foreground" Value="{StaticResource LongForeground}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Type}" Value="{x:Static sys:TypeCode.String}">
                                 <Setter Property="Foreground" Value="{StaticResource StringForeground}" />
                             </DataTrigger>
                         </Style.Triggers>
@@ -294,7 +313,7 @@
                             <GridViewColumn Width="60" Header="type">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding StructureType}" TextTrimming="CharacterEllipsis" />
+                                        <TextBlock Text="{Binding TypeName}" TextTrimming="CharacterEllipsis" />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>

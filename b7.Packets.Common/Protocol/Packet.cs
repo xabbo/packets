@@ -11,82 +11,6 @@ namespace b7.Packets.Common.Protocol
 {
     public class Packet : IPacket
     {
-        private class ReadOnlyPacket : IReadOnlyPacket
-        {
-            private readonly Packet _packet;
-
-            public Header Header => _packet.Header;
-
-            public int Position
-            {
-                get => _packet.Position;
-                set => _packet.Position = value;
-            }
-
-            public int Length => _packet.Length;
-
-            public int Available => _packet.Available;
-
-            public ReadOnlySpan<byte> GetBuffer() => _packet.GetBuffer();
-
-            public ReadOnlyPacket(Packet packet)
-            {
-                this._packet = packet;
-            }
-
-            public bool CanReadBool() => _packet.CanReadBool();
-
-            public bool CanReadByte() => _packet.CanReadByte();
-
-            public bool CanReadDouble() => _packet.CanReadDouble();
-
-            public bool CanReadInt() => _packet.CanReadInt();
-
-            public bool CanReadShort() => _packet.CanReadShort();
-
-            public bool CanReadString() => _packet.CanReadString();
-
-            public void CopyTo(Span<byte> destination) => _packet.CopyTo(destination);
-
-            public bool ReadBool() => _packet.ReadBool();
-
-            public bool ReadBool(int position) => _packet.ReadBool(position);
-
-            public byte ReadByte() => _packet.ReadByte();
-
-            public byte ReadByte(int position) => _packet.ReadByte(position);
-
-            public void ReadBytes(Span<byte> buffer) => _packet.ReadBytes(buffer);
-
-            public void ReadBytes(Span<byte> buffer, int position) => _packet.ReadBytes(buffer, position);
-
-            public int ReadInt() => _packet.ReadInt();
-
-            public int ReadInt(int position) => _packet.ReadInt(position);
-
-            public float ReadFloat() => _packet.ReadFloat();
-
-            public float ReadFloat(int position) => _packet.ReadFloat(position);
-
-            public long ReadLong() => _packet.ReadLong();
-
-            public long ReadLong(int position) => _packet.ReadLong(position);
-
-            public short ReadShort() => _packet.ReadShort();
-
-            public short ReadShort(int position) => _packet.ReadShort(position);
-
-            public string ReadString() => _packet.ReadString();
-
-            public string ReadString(int position) => _packet.ReadString(position);
-
-            public float ReadFloatAsString() => _packet.ReadFloatAsString();
-
-            public float ReadFloatAsString(int position) => _packet.ReadFloatAsString(position);
-
-            public byte[] ToBytes() => _packet.ToBytes();
-        }
-
         public static readonly Type
             Byte = typeof(byte),
             Bool = typeof(bool),
@@ -97,22 +21,7 @@ namespace b7.Packets.Common.Protocol
             String = typeof(string),
             ByteArray = typeof(byte[]);
 
-        public ReadOnlySpan<byte> GetBuffer() => _buffer.Span[0..Length];
-
-        /// <summary>
-        /// Gets the data in the packet including the length and message ID headers.
-        /// </summary>
-        public byte[] ToBytes()
-        {
-            byte[] buffer = new byte[6 + Length];
-
-            Span<byte> span = buffer.AsSpan();
-            BinaryPrimitives.WriteInt32BigEndian(span[0..4], 2 + Length);
-            BinaryPrimitives.WriteInt16BigEndian(span[4..6], Header.Value);
-            _buffer.Span[0..Length].CopyTo(span[6..]);
-
-            return buffer;
-        }
+        public ReadOnlyMemory<byte> GetBuffer() => _buffer[0..Length];
 
         /// <summary>
         /// Copies the data of this <see cref="Packet"/> to a destination <see cref="Span{T}"/>.
@@ -618,8 +527,6 @@ namespace b7.Packets.Common.Protocol
             Position = position;
             ReplaceValues(newValues);
         }
-
-        public IReadOnlyPacket AsReadOnly() => new ReadOnlyPacket(this);
         #endregion
     }
 }

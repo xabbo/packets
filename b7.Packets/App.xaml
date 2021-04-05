@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:b7.Packets"
              xmlns:svc="clr-namespace:b7.Packets.Services"
-             Startup="Application_Startup">
+             xmlns:converters="clr-namespace:b7.Packets.WPF.Converters">
     <Application.Resources>
-        <svc:ServiceLocator x:Key="Locator" />
+        <!-- Converters -->
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
         <!-- Colors -->
         <!-- Bool -->
         <SolidColorBrush x:Key="BoolForeground" Color="DarkMagenta" />

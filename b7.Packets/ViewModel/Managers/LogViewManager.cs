@@ -8,20 +8,24 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
 using b7.Packets.Common.Messages;
 using b7.Packets.Common.Protocol;
-using b7.Packets.Common.Services;
+
 
 using b7.Packets.Composer;
 using b7.Packets.Services;
 using b7.Packets.Util;
+using b7.Modules.Interceptor;
+
+#pragma warning disable CA2012 // Use ValueTasks correctly
 
 namespace b7.Packets.ViewModel
 {
-    public class LogViewManager : ViewModelBase
+    public class LogViewManager : ObservableObject
     {
         private readonly IContext _context;
         private readonly IMessageManager _messages;
@@ -36,21 +40,21 @@ namespace b7.Packets.ViewModel
         public bool IsConnected
         {
             get => _isConnected;
-            set => _set(ref _isConnected, value);
+            set => Set(ref _isConnected, value);
         }
 
         private bool _isLogging;
         public bool IsLogging
         {
             get => _isLogging;
-            set => _set(ref _isLogging, value);
+            set => Set(ref _isLogging, value);
         }
 
         private Direction _direction = Direction.Both;
         public Direction Direction
         {
             get => _direction;
-            set => _set(ref _direction, value);
+            set => Set(ref _direction, value);
         }
 
         private string _filterText = string.Empty;
@@ -59,7 +63,7 @@ namespace b7.Packets.ViewModel
             get => _filterText;
             set
             {
-                if (_set(ref _filterText, value))
+                if (Set(ref _filterText, value))
                     UpdateFilter();
             }
         }
@@ -68,7 +72,7 @@ namespace b7.Packets.ViewModel
         public PacketLogViewModel? SelectedItem
         {
             get => _selectedItem;
-            set => _set(ref _selectedItem, value);
+            set => Set(ref _selectedItem, value);
         }
 
         private StringBuilder _packetInfo;
@@ -78,7 +82,7 @@ namespace b7.Packets.ViewModel
             set
             {
                 _packetInfo = new StringBuilder(value);
-                OnPropertyChanged(nameof(PacketInfo));
+                RaisePropertyChanged(nameof(PacketInfo));
             }
         }
 
@@ -86,7 +90,7 @@ namespace b7.Packets.ViewModel
         public string ComposerText
         {
             get => _composerText;
-            set => _set(ref _composerText, value);
+            set => Set(ref _composerText, value);
         }
 
         public ICommand ToggleLoggingCommand { get; }
@@ -195,7 +199,7 @@ namespace b7.Packets.ViewModel
             try
             {
                 IPacket packet = _composer.ComposePacket(Destination.Server, ComposerText);
-                _interceptor.SendToServerAsync(packet);
+                _interceptor.SendToServerAsync(packet).AsTask();
 
                 AddLog(new PacketLogViewModel(packet));
             }
@@ -222,8 +226,7 @@ namespace b7.Packets.ViewModel
             if (e.IsIncoming && !Direction.HasFlag(Direction.Incoming)) return;
             if (e.IsOutgoing && !Direction.HasFlag(Direction.Outgoing)) return;
 
-            // TODO add a hidden flag to messages and ignore them here
-            // hard-coded for now
+            // TODO add a hidden flag to messages and ignore them here, hard-coded for now
 
             switch (e.Packet.Header.Name)
             {
@@ -255,7 +258,7 @@ namespace b7.Packets.ViewModel
                 AppendPacketInfo(_packetInfo, packetLog);
             }
 
-            OnPropertyChanged(nameof(PacketInfo));
+            RaisePropertyChanged(nameof(PacketInfo));
         }
 
         private void AppendPacketInfo(StringBuilder sb, PacketLogViewModel packetLog)
@@ -267,7 +270,7 @@ namespace b7.Packets.ViewModel
             sb.Append(packetLog.Timestamp.ToString("HH:mm:ss.fff"));
             sb.Append("] ");
             sb.Append(packetLog.Name);
-            if (packetLog.Packet.Header.HasName)
+            if (packetLog.Packet.Header.Name != null)
             {
                 sb.Append(" (");
                 sb.Append(packetLog.Packet.Header.Value);
@@ -279,7 +282,7 @@ namespace b7.Packets.ViewModel
                 sb.AppendLine();
                 sb.AppendLine();
 
-                ReadOnlySpan<byte> data = packet.GetBuffer();
+                ReadOnlySpan<byte> data = packet.GetBuffer().Span;
 
                 int rows = (data.Length - 1) / 16 + 1;
                 for (int i = 0; i < rows; i++)

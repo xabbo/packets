@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Xabbo.Core.Protocol;
+
+using b7.Packets.Common.Parsers;
+using b7.Packets.Common.Protocol;
 
 namespace b7.Packets.Parsers
 {
@@ -19,102 +21,47 @@ namespace b7.Packets.Parsers
             StructureItems = _structureItems.AsReadOnly();
         }
 
-        public bool ReadBool(string? name = null)
-        {
-            bool value = _packet.ReadBool();
-
-            _structureItems.Add(new StructureItem
-            {
-                Type = StructureTypes.Bool,
-                Offset = _packet.Position - 1,
-                Length = 1,
-                Value = value,
-                Name = name
-            });
-
-            return value;
-        }
-
-        public byte ReadByte(string? name = null)
-        {
-            byte value = _packet.ReadByte();
-
-            _structureItems.Add(new StructureItem
-            {
-                Type = StructureTypes.Byte,
-                Offset = _packet.Position - 1,
-                Length = 1,
-                Value = value,
-                Name = name
-            });
-
-            return value;
-        }
-
-        public short ReadShort(string? name = null)
-        {
-            short value = _packet.ReadShort();
-
-            _structureItems.Add(new StructureItem
-            {
-                Type = StructureTypes.Short,
-                Offset = _packet.Position - 2,
-                Length = 2,
-                Value = value,
-                Name = name
-            });
-
-            return value;
-        }
-
-        public int ReadInt(string? name = null)
-        {
-            int value = _packet.ReadInt();
-
-            _structureItems.Add(new StructureItem
-            {
-                Type = StructureTypes.Int,
-                Offset = _packet.Position - 4,
-                Length = 4,
-                Value = value,
-                Name = name
-            });
-
-            return value;
-        }
-
-        public long ReadLong(string? name = null)
-        {
-            long value = _packet.ReadLong();
-
-            _structureItems.Add(new StructureItem
-            {
-                Type = StructureTypes.Long,
-                Offset = _packet.Position - 8,
-                Length = 8,
-                Value = value,
-                Name = name
-            });
-
-            return value;
-        }
-
-        public string ReadString(string? name = null)
+        private T Read<T>(string? name)
         {
             int offset = _packet.Position;
-            string value = _packet.ReadString();
-            int length = _packet.Position - offset;
+            
+            TypeCode typeCode = Type.GetTypeCode(typeof(T));
+            object value = typeCode switch
+            {
+                TypeCode.Boolean => _packet.ReadBool(),
+                TypeCode.Byte => _packet.ReadByte(),
+                TypeCode.Int16 => _packet.ReadShort(),
+                TypeCode.Int32 => _packet.ReadInt(),
+                TypeCode.Single => _packet.ReadFloat(),
+                TypeCode.Int64 => _packet.ReadLong(),
+                TypeCode.String => _packet.ReadString(),
+                _ => throw new Exception($"Invalid type code {typeCode}")
+            };
 
             _structureItems.Add(new StructureItem
             {
-                Type = StructureTypes.String,
+                Type = typeCode,
                 Offset = offset,
-                Length = length,
+                Length = _packet.Position - offset,
                 Value = value,
                 Name = name
             });
 
-            return value;
+            return (T)value;
         }
+
+        public bool ReadBool(string? name = null) => Read<bool>(name);
+
+        public byte ReadByte(string? name = null) => Read<byte>(name);
+
+        public short ReadShort(string? name = null) => Read<short>(name);
+
+        public int ReadInt(string? name = null) => Read<int>(name);
+
+        public float ReadFloat(string? name = null) => Read<float>(name);
+
+        public long ReadLong(string? name = null) => Read<long>(name);
+
+        public string ReadString(string? name = null) => Read<string>(name);
     }
 }

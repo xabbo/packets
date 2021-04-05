@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="b7.Packets.View.PacketLogView"
+﻿<UserControl x:Class="b7.Packets.View.LogView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,12 +8,12 @@
              xmlns:global="clr-namespace:b7.Packets"
              xmlns:viewModel="clr-namespace:b7.Packets.ViewModel"
              xmlns:svc="clr-namespace:b7.Packets.Services"
+             xmlns:msgs="clr-namespace:b7.Packets.Common.Messages;assembly=b7.Packets.Common"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance Type={x:Type viewModel:LogViewManager}}"
              Background="White"
-             FontFamily="Hack,Consolas"
-             DataContext="{Binding Source={StaticResource Locator}, Path=LogView}">
+             FontFamily="Hack,Consolas">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -130,9 +130,20 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Margin="2" Padding="3"
-                                FontWeight="Bold" BorderBrush="DarkRed" Foreground="DarkRed"
-                                Content="&lt;&lt;" ToolTip="Send to client"
-                                Command="{Binding SendToClientCommand}">
+                    FontWeight="Bold" BorderBrush="DarkRed"
+                    Content="&lt;&lt;" ToolTip="Send to client"
+                    IsEnabled="{Binding IsConnected}"
+                    Command="{Binding SendToClientCommand}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Foreground" Value="DarkRed" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsConnected}" Value="False">
+                                <Setter Property="Foreground" Value="Gray" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
                 <Button.Background>
                     <SolidColorBrush Color="Red" Opacity="0.2" />
                 </Button.Background>
@@ -144,9 +155,20 @@
                      VerticalScrollBarVisibility="Auto"
                      MaxLines="10" />
             <Button Grid.Column="2" Margin="2" Padding="3"
-                                FontWeight="Bold" BorderBrush="DarkCyan" Foreground="DarkCyan"
-                                Content="&gt;&gt;" ToolTip="Send to server"
-                                Command="{Binding SendToServerCommand}">
+                    FontWeight="Bold" BorderBrush="DarkCyan"
+                    Content="&gt;&gt;" ToolTip="Send to server"
+                    IsEnabled="{Binding IsConnected}"
+                    Command="{Binding SendToServerCommand}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Foreground" Value="DarkCyan" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsConnected}" Value="False">
+                                <Setter Property="Foreground" Value="Gray" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
                 <Button.Background>
                     <SolidColorBrush Color="Cyan" Opacity="0.2" />
                 </Button.Background>
@@ -155,22 +177,57 @@
                 <ComboBox Margin="2" Padding="8,2" Width="100"
                           HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                           SelectedItem="{Binding Direction}">
-                    <global:Direction>Incoming</global:Direction>
-                    <global:Direction>Outgoing</global:Direction>
-                    <global:Direction>Both</global:Direction>
+                    <msgs:Direction>Incoming</msgs:Direction>
+                    <msgs:Direction>Outgoing</msgs:Direction>
+                    <msgs:Direction>Both</msgs:Direction>
                 </ComboBox>
-                <Button Margin="2" Padding="8,2"
+                <Button Margin="2" Padding="0" Width="60"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
                         Command="{Binding ToggleLoggingCommand}">
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Content" Value="Start" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsLogging}" Value="True">
-                                    <Setter Property="Content" Value="Stop" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
+                    <Button.Content>
+                        <Grid ClipToBounds="True">
+                            <ProgressBar BorderThickness="0" IsIndeterminate="True"
+                                         VerticalAlignment="Stretch">
+                                <ProgressBar.RenderTransform>
+                                    <ScaleTransform ScaleX="5" />
+                                </ProgressBar.RenderTransform>
+                                <ProgressBar.Style>
+                                    <Style TargetType="{x:Type ProgressBar}">
+                                        <Setter Property="Visibility" Value="Hidden" />
+                                        <Setter Property="Foreground" Value="Orange" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsLogging}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsConnected}" Value="True">
+                                                <Setter Property="Foreground" Value="LimeGreen" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ProgressBar.Style>
+                            </ProgressBar>
+                            <TextBlock Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Text" Value="Start" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsLogging}" Value="True">
+                                                <Setter Property="Text" Value="Stop" />
+                                            </DataTrigger>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding IsLogging}" Value="True" />
+                                                    <Condition Binding="{Binding IsConnected}" Value="False" />
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Text" Value="Standby" />
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Button.Content>
                 </Button>
             </StackPanel>
         </Grid>

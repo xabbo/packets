@@ -1,5 +1,6 @@
 ﻿using System;
-using Xabbo.Core.Messages;
+
+using b7.Packets.Common.Messages;
 
 namespace b7.Packets.Parsers
 {

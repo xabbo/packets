@@ -10,7 +10,8 @@
         d:DataContext="{d:DesignInstance Type={x:Type viewModel:MainViewManager}}"
         Title="b7 packets" Height="450" Width="800"
         Topmost="{Binding ElementName=checkBoxTopMost, Path=IsChecked}"
-        FontSize="11" FontFamily="Hack,Consolas">
+        FontSize="11" FontFamily="Hack,Consolas"
+        UseLayoutRounding="True">
     <Grid>
         <CheckBox x:Name="checkBoxTopMost"
                   Margin="6"
@@ -20,10 +21,13 @@
                   Content="Topmost" />
         <TabControl x:Name="tabControl" Margin="4">
             <TabItem x:Name="logTab" Header="Log">
-                <view:PacketLogView x:Name="packetLogView" />
+                <view:LogView x:Name="packetLogView" DataContext="{Binding Log}" />
+            </TabItem>
+            <TabItem x:Name="messagesTab" Header="Messages">
+                <view:MessagesView />
             </TabItem>
             <TabItem x:Name="structureTab" Header="Structure">
-                <view:StructureView x:Name="structuralizerView" />
+                <view:StructureView x:Name="structuralizerView" DataContext="{Binding Structure}" />
             </TabItem>
         </TabControl>
     </Grid>

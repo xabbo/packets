@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace b7.Packets.Services.Remote.GEarth
+namespace b7.Modules.Interceptor.GEarth
 {
     public class GEarthOptions
     {
-        public int Port { get; init; }
         public string Title { get; init; }
         public string Author { get; init; }
         public string Version { get; init; }

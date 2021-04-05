@@ -42,8 +42,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\b7.Packets.Common\b7.Packets.Common.csproj" />
-  </ItemGroup>
-
 </Project>

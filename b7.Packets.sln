@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "b7.Packets", "b7.Packets\b7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "b7.Packets.Common", "b7.Packets.Common\b7.Packets.Common.csproj", "{2F7A3438-049D-4736-A6F0-AE8B571A84A0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Submodules", "Submodules", "{AF921ED5-9449-4BAD-B1F9-EA11C9B218B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xabbo.GEarth", "Xabbo.GEarth\Xabbo.GEarth\Xabbo.GEarth.csproj", "{A5B0A3EF-EF87-47C9-BB10-C36E4A4488A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xabbo.Common", "Xabbo.GEarth\Xabbo.Common\Xabbo.Common\Xabbo.Common.csproj", "{CC362319-805E-41D9-93B6-B719D5204467}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +27,21 @@ Global
 		{2F7A3438-049D-4736-A6F0-AE8B571A84A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F7A3438-049D-4736-A6F0-AE8B571A84A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F7A3438-049D-4736-A6F0-AE8B571A84A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5B0A3EF-EF87-47C9-BB10-C36E4A4488A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B0A3EF-EF87-47C9-BB10-C36E4A4488A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B0A3EF-EF87-47C9-BB10-C36E4A4488A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B0A3EF-EF87-47C9-BB10-C36E4A4488A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC362319-805E-41D9-93B6-B719D5204467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC362319-805E-41D9-93B6-B719D5204467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC362319-805E-41D9-93B6-B719D5204467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC362319-805E-41D9-93B6-B719D5204467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5B0A3EF-EF87-47C9-BB10-C36E4A4488A7} = {AF921ED5-9449-4BAD-B1F9-EA11C9B218B2}
+		{CC362319-805E-41D9-93B6-B719D5204467} = {AF921ED5-9449-4BAD-B1F9-EA11C9B218B2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {196A80A0-DB80-4FBB-93FA-5F3D84188A84}

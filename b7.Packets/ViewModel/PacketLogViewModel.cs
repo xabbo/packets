@@ -2,8 +2,7 @@
 
 using GalaSoft.MvvmLight;
 
-using b7.Packets.Common.Messages;
-using b7.Packets.Common.Protocol;
+using Xabbo.Messages;
 
 namespace b7.Packets.ViewModel
 {

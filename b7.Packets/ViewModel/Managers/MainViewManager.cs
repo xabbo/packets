@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
 
+using Xabbo.Interceptor;
+
 using b7.Packets.Services;
-using b7.Modules.Interceptor;
 
 namespace b7.Packets.ViewModel
 {
@@ -31,10 +32,6 @@ namespace b7.Packets.ViewModel
 
         public Task InitializeAsync()
         {
-            _interceptor.Connected += Interceptor_Connected;
-            _interceptor.ConnectionStart += Remote_ConnectionStart;
-            _interceptor.ConnectionEnd += Remote_ConnectionEnd;
-
             _interceptor.Start();
 
             // Switch tabs when loading a packet in the structure view
@@ -43,21 +40,6 @@ namespace b7.Packets.ViewModel
             );
 
             return Task.CompletedTask;
-        }
-
-        private void Interceptor_Connected(object? sender, EventArgs e)
-        {
-
-        }
-
-        private void Remote_ConnectionStart(object? sender, EventArgs e)
-        {
-
-        }
-
-        private void Remote_ConnectionEnd(object? sender, EventArgs e)
-        {
-
         }
     }
 }

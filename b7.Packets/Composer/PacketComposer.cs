@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-using b7.Packets.Common.Messages;
-using b7.Packets.Common.Protocol;
+using Xabbo.Interceptor;
+using Xabbo.Messages;
 
-using b7.Packets.Services;
 using b7.Packets.Util;
 
 namespace b7.Packets.Composer
@@ -15,11 +14,26 @@ namespace b7.Packets.Composer
     {
         private readonly Tokenizer _tokenizer = new();
 
-        private readonly IMessageManager _messages;
+        private readonly IRemoteInterceptor _interceptor;
+        private IMessageManager? _messages;
 
-        public PacketComposer(IMessageManager messages)
+        public PacketComposer(IRemoteInterceptor interceptor)
         {
-            _messages = messages;
+            _interceptor = interceptor;
+
+            _interceptor.Connected += Interceptor_Connected;
+            _interceptor.InterceptorDisconnected += Interceptor_Disconnected;
+            _interceptor.Disconnected += Interceptor_Disconnected;
+        }
+
+        private void Interceptor_Connected(object? sender, GameConnectedEventArgs e)
+        {
+            _messages = _interceptor.Messages;
+        }
+
+        private void Interceptor_Disconnected(object? sender, EventArgs e)
+        {
+            _messages = null;
         }
 
         public IPacket ComposePacket(Destination destination, string structure)
@@ -48,7 +62,6 @@ namespace b7.Packets.Composer
             }
 
             // Parse packet structure
-
             bool isNegating = false;
 
             while (e.MoveNext())
@@ -169,18 +182,21 @@ namespace b7.Packets.Composer
 
         private Header GetHeader(Destination destination, string name)
         {
-            Header header;
+            if (_messages is null)
+                throw new InvalidOperationException("Message manager is not initialized");
+
+            Header? header;
             bool acquiredHeader;
 
             if (destination == Destination.Unknown)
             {
                 acquiredHeader =
-                    _messages.TryGetHeader(Destination.Client, name, out header) ||
-                    _messages.TryGetHeader(Destination.Server, name, out header);
+                    _messages.TryGetHeaderByName(Destination.Client, name, out header) ||
+                    _messages.TryGetHeaderByName(Destination.Server, name, out header);
             }
             else
             {
-                acquiredHeader = _messages.TryGetHeader(destination, name, out header);
+                acquiredHeader = _messages.TryGetHeaderByName(destination, name, out header);
             }
 
             if (!acquiredHeader)
@@ -194,25 +210,22 @@ namespace b7.Packets.Composer
                 throw new Exception($"Unknown {directionString}message name '{name}'");
             }
 
-            return header;
+            return header ?? Header.Unknown;
         }
 
         private Header GetHeader(Destination destination, short value)
         {
-            if (destination != Destination.Unknown)
+            if (_messages is null)
+                throw new InvalidOperationException("Message manager is not initialized");
+
+            if (destination != Destination.Unknown &&
+                _messages.TryGetHeaderByValue(destination, value, out Header? header))
             {
-                if (_messages.TryGetHeader(destination, value, out Header header))
-                {
-                    return header;
-                }
-                else
-                {
-                    return new Header(destination, value);
-                }
+                return header;
             }
             else
             {
-                return new Header(destination, value);
+                return new Header(destination, value, null);
             }
         }
 

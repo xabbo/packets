@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Windows;
-using System.Diagnostics;
+using System.Reflection;
 
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
+using Xabbo.Interceptor;
+using Xabbo.Interceptor.GEarth;
+
 using b7.Packets.Services;
 using b7.Packets.ViewModel;
-using b7.Packets.Util;
-using b7.Modules.Interceptor.GEarth;
-using b7.Modules.Interceptor;
 
 namespace b7.Packets
 {
@@ -26,21 +26,19 @@ namespace b7.Packets
                 provider => ActivatorUtilities.CreateInstance<WpfContext>(provider, Dispatcher)
             );
 
-            // services.AddSingleton<IMessageManager, MessageManager>();
-
-            services.AddSingleton(new GEarthOptions
-            {
-                Title = "b7 packets",
-                Description = "a packet logger",
-                Version = "1.0.0",
-                Author = "b7"
-            });
-
             string interceptorService = context.Configuration.GetValue<string>("Interceptor:Service");
             switch (interceptorService.ToLower())
             {
                 case "g-earth":
                     {
+                        services.AddSingleton(new GEarthOptions
+                        {
+                            Title = "b7 packets",
+                            Description = "a packet logger",
+                            Version = Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "?",
+                            Author = "b7"
+                        });
+
                         services.AddSingleton<IRemoteInterceptor, GEarthRemoteInterceptor>();
                     }
                     break;
@@ -49,9 +47,6 @@ namespace b7.Packets
             }
 
             services.AddSingleton<IContext>(new WpfContext(Dispatcher));
-
-            // services.AddSingleton<IMessageManager, MessageManager>();
-            services.AddSingleton<IMessageManager, HarbleMessageManager>();
 
             services.AddSingleton<MainViewManager>();
             services.AddSingleton<LogViewManager>();
@@ -102,25 +97,6 @@ namespace b7.Packets
             }
 
             base.OnExit(e);
-        }
-
-        static int TryGetPortByProcess(string processName, string? windowTitle = null)
-        {
-            try
-            {
-                foreach (var info in Netstat.GetTcpListeners())
-                {
-                    if (info.Process?.ProcessName.Equals(processName, StringComparison.OrdinalIgnoreCase) == true &&
-                        (windowTitle is null || info.Process.MainWindowTitle.StartsWith(windowTitle, StringComparison.OrdinalIgnoreCase)))
-                    {
-                        Debug.WriteLine($"Found process {info.Process.ProcessName} \"{info.Process.MainWindowTitle}\" listening on port {info.LocalPort}");
-                        return info.LocalPort;
-                    }
-                }
-
-                return -1;
-            }
-            catch { return -1; }
         }
     }
 }

@@ -4,11 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:root="clr-namespace:b7.Packets"
              xmlns:local="clr-namespace:b7.Packets.View"
              xmlns:global="clr-namespace:b7.Packets"
              xmlns:viewModel="clr-namespace:b7.Packets.ViewModel"
-             xmlns:svc="clr-namespace:b7.Packets.Services"
-             xmlns:msgs="clr-namespace:b7.Packets.Common.Messages;assembly=b7.Packets.Common"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance Type={x:Type viewModel:LogViewManager}}"
@@ -177,9 +176,9 @@
                 <ComboBox Margin="2" Padding="8,2" Width="100"
                           HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                           SelectedItem="{Binding Direction}">
-                    <msgs:Direction>Incoming</msgs:Direction>
-                    <msgs:Direction>Outgoing</msgs:Direction>
-                    <msgs:Direction>Both</msgs:Direction>
+                    <root:Direction>Incoming</root:Direction>
+                    <root:Direction>Outgoing</root:Direction>
+                    <root:Direction>Both</root:Direction>
                 </ComboBox>
                 <Button Margin="2" Padding="0" Width="60"
                         HorizontalContentAlignment="Stretch"

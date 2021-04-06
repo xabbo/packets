@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace b7.Packets.Common.Messages
+namespace b7.Packets
 {
     [Flags]
     public enum Direction

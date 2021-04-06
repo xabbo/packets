@@ -9,28 +9,21 @@ using System.Windows.Data;
 
 using GalaSoft.MvvmLight;
 
-using b7.Packets.Services;
+using Xabbo.Interceptor;
 
 namespace b7.Packets.ViewModel
 {
     public class MessagesViewManager : ObservableObject
     {
-        private readonly IMessageManager _messageManager;
-
+        private readonly IRemoteInterceptor _interceptor;
         private readonly ObservableCollection<MessageViewModel> _messages;
         public ICollectionView Messages { get; }
 
-        public MessagesViewManager(IMessageManager messageManager)
+        public MessagesViewManager(IRemoteInterceptor interceptor)
         {
-            _messageManager = messageManager;
-
+            _interceptor = interceptor;
             _messages = new ObservableCollection<MessageViewModel>();
             Messages = CollectionViewSource.GetDefaultView(_messages);
-        }
-
-        public void Initialize()
-        {
-
         }
     }
 }

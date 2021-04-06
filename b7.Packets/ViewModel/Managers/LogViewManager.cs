@@ -12,14 +12,12 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
-using b7.Packets.Common.Messages;
-using b7.Packets.Common.Protocol;
-
+using Xabbo.Interceptor;
+using Xabbo.Messages;
 
 using b7.Packets.Composer;
 using b7.Packets.Services;
 using b7.Packets.Util;
-using b7.Modules.Interceptor;
 
 #pragma warning disable CA2012 // Use ValueTasks correctly
 
@@ -28,7 +26,6 @@ namespace b7.Packets.ViewModel
     public class LogViewManager : ObservableObject
     {
         private readonly IContext _context;
-        private readonly IMessageManager _messages;
         private readonly IRemoteInterceptor _interceptor;
 
         private readonly PacketComposer _composer;
@@ -100,17 +97,16 @@ namespace b7.Packets.ViewModel
         public ICommand SendToClientCommand { get; }
         public ICommand SendToServerCommand { get; }
 
-        public LogViewManager(IContext context, IMessageManager messages, IRemoteInterceptor interceptor)
+        public LogViewManager(IContext context, IRemoteInterceptor interceptor)
         {
             _context = context;
-            _messages = messages;
             _interceptor = interceptor;
 
-            _interceptor.ConnectionStart += OnConnectionStart;
-            _interceptor.ConnectionEnd += OnConnectionEnd;
+            _interceptor.Connected += OnConnectionStart;
+            _interceptor.Disconnected += OnConnectionEnd;
             _interceptor.Intercepted += OnIntercepted;
 
-            _composer = new PacketComposer(_messages);
+            _composer = new PacketComposer(_interceptor);
 
             _logs = new ObservableCollection<PacketLogViewModel>();
             Logs = CollectionViewSource.GetDefaultView(_logs);

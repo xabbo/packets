@@ -3,16 +3,16 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using System.Windows.Data;
+using System.Windows.Media;
 
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
-using b7.Packets.Common.Protocol;
+using Xabbo.Messages;
 
 using b7.Packets.Services;
-using System.Windows.Data;
-using System.Windows.Media;
 
 namespace b7.Packets.ViewModel
 {
@@ -216,9 +216,9 @@ namespace b7.Packets.ViewModel
             else
             {
                 CanAddBool = _packet.CanReadBool();
-                CanAddByte = _packet.CanReadByte();
-                CanAddShort = _packet.CanReadShort();
-                CanAddInt = _packet.CanReadInt();
+                CanAddByte = _packet.Available >= 1;
+                CanAddShort = _packet.Available >= 2;
+                CanAddInt = _packet.Available >= 4;
                 CanAddLong = _packet.Available >= 8;
                 CanAddFloat = _packet.Available >= 4;
                 CanAddString = _packet.CanReadString();
@@ -324,45 +324,58 @@ namespace b7.Packets.ViewModel
 
         private void AddBool()
         {
-            if (_packet?.CanReadBool() != true) return;
-
-            AddStructureItem(TypeCode.Boolean);
+            if (_packet?.CanReadBool() == true)
+            {
+                AddStructureItem(TypeCode.Boolean);
+            }
         }
 
         private void AddByte()
         {
-            if (_packet?.CanReadByte() != true) return;
-            AddStructureItem(TypeCode.Byte);
+            if (_packet?.Available >= 1)
+            {
+                AddStructureItem(TypeCode.Byte);
+            }
         }
 
         private void AddShort()
         {
-            if (_packet?.CanReadShort() != true) return;
-            AddStructureItem(TypeCode.Int16);
+            if (_packet?.Available >= 2)
+            {
+                AddStructureItem(TypeCode.Int16);
+            }
         }
 
         private void AddInt()
         {
-            if (_packet?.CanReadInt() != true) return;
-            AddStructureItem(TypeCode.Int32);
+            if (_packet?.Available >= 4)
+            {
+                AddStructureItem(TypeCode.Int32);
+            }
         }
 
         private void AddFloat()
         {
-            if (_packet?.Available < 4) return;
-            AddStructureItem(TypeCode.Single);
+            if (_packet?.Available >= 4)
+            {
+                AddStructureItem(TypeCode.Single);
+            }
         }
 
         private void AddLong()
         {
-            if (_packet?.Available < 8) return;
-            AddStructureItem(TypeCode.Int64);
+            if (_packet?.Available >= 8)
+            {
+                AddStructureItem(TypeCode.Int64);
+            }
         }
 
         private void AddString()
         {
-            if (_packet?.CanReadString() != true) return;
-            AddStructureItem(TypeCode.String);
+            if (_packet?.CanReadString() == true)
+            {
+                AddStructureItem(TypeCode.String);
+            }
         }
     }
 }

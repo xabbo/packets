@@ -31,13 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Xabbo.GEarth\Xabbo.GEarth\Xabbo.GEarth.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="messages.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="messages.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

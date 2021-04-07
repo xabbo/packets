@@ -1,0 +1,6660 @@
+{
+  "Incoming": [
+    {
+      "Name": "LegacyBannerPublicKey",
+      "Header": 1,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClubAndSecurityLevels",
+      "Header": 2,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Ok",
+      "Header": 3,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Film",
+      "Header": 4,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserObject",
+      "Header": 5,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "WalletBalance",
+      "Header": 6,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ScrSendUserInfo",
+      "Header": 7,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IsFirstLoginOfDay",
+      "Header": 8,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ScrSendKickbackInfo",
+      "Header": 9,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Token",
+      "Header": 11,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MessengerInit",
+      "Header": 12,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendListUpdate",
+      "Header": 13,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendListFragment",
+      "Header": 14,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CloseConnection",
+      "Header": 18,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OpenConnectionConfirmation",
+      "Header": 19,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NoLoginPermission",
+      "Header": 20,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomExitReason",
+      "Header": 21,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeleteFlatResult",
+      "Header": 23,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Chat",
+      "Header": 24,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Whisper",
+      "Header": 25,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Shout",
+      "Header": 26,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FloodControl",
+      "Header": 27,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UsersInRoom",
+      "Header": 28,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserLoggedOut",
+      "Header": 29,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StackingHeightmap",
+      "Header": 31,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ActiveObjects",
+      "Header": 32,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Error",
+      "Header": 33,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Status",
+      "Header": 34,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserBanned",
+      "Header": 35,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetNameApproved",
+      "Header": 36,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetStatusUpdate",
+      "Header": 37,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetLevelUpdate",
+      "Header": 38,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YouAreController",
+      "Header": 42,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YouAreNotController",
+      "Header": 43,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NoSuchFlat",
+      "Header": 44,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Items",
+      "Header": 45,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatProperty",
+      "Header": 46,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YouAreOwner",
+      "Header": 47,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ItemData",
+      "Header": 48,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ServiceIsClosed",
+      "Header": 49,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Ping",
+      "Header": 50,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RegOk",
+      "Header": 51,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PickedUpPetFromRoom",
+      "Header": 58,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatCreated",
+      "Header": 59,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SubFlatCreated",
+      "Header": 60,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PickedUpAllItems",
+      "Header": 61,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DoorFlat",
+      "Header": 62,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DoorOtherEndDeleted",
+      "Header": 63,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DoorNotInstalled",
+      "Header": 64,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseError",
+      "Header": 65,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CatalogUrl",
+      "Header": 66,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseOk",
+      "Header": 67,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NotEnoughBalance",
+      "Header": 68,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomReady",
+      "Header": 69,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YouAreModerator",
+      "Header": 70,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhTickets",
+      "Header": 72,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhNoTickets",
+      "Header": 73,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "JumpData",
+      "Header": 74,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "JumpDataSaved",
+      "Header": 75,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserNotFound",
+      "Header": 76,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "JumpsForUser",
+      "Header": 77,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GotoJumpingPlace",
+      "Header": 78,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OwnerPresence",
+      "Header": 82,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AddItem",
+      "Header": 83,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveItem",
+      "Header": 84,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateItem",
+      "Header": 85,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StuffDataUpdate",
+      "Header": 88,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DoorOut",
+      "Header": 89,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DiceValue",
+      "Header": 90,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DoorbellRinging",
+      "Header": 91,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DoorIn",
+      "Header": 92,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ActiveObjectAdd",
+      "Header": 93,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ActiveObjectRemove",
+      "Header": 94,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ActiveObjectUpdate",
+      "Header": 95,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InventoryAddOrUpdateFurni",
+      "Header": 98,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InventoryRemoveFurni",
+      "Header": 99,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InventoryInvalidate",
+      "Header": 101,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeYouAreNotAllowed",
+      "Header": 102,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeOtherNotAllowed",
+      "Header": 103,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeOpen",
+      "Header": 104,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeOpenFail",
+      "Header": 105,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeNoTradeOpen",
+      "Header": 106,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeNoSuchItem",
+      "Header": 107,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeItems",
+      "Header": 108,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeAccept",
+      "Header": 109,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeClose",
+      "Header": 110,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeConfirmation",
+      "Header": 111,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeCompleted",
+      "Header": 112,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Trigger",
+      "Header": 113,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TeleportRelinkResponse",
+      "Header": 114,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FurniRentOrBuyoutOffer",
+      "Header": 115,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DonationSettings",
+      "Header": 117,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DonateResult",
+      "Header": 118,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhLiftDoorOpen",
+      "Header": 122,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhLiftDoorClose",
+      "Header": 123,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhTicketsBuy",
+      "Header": 124,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhJumpingPlaceOk",
+      "Header": 125,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CatalogIndex",
+      "Header": 126,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CatalogPage",
+      "Header": 127,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MemberInfo",
+      "Header": 128,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PresentOpen",
+      "Header": 129,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatPasswordOk",
+      "Header": 130,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NewBuddyRequest",
+      "Header": 132,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CancelBuddyRequest",
+      "Header": 133,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MessengerNewConsoleMessage",
+      "Header": 134,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MessengerRoomInvite",
+      "Header": 135,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SystemBroadcast",
+      "Header": 139,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InventoryPush",
+      "Header": 140,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PostItPlaced",
+      "Header": 145,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MemberRoom",
+      "Header": 150,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ServiceClosed",
+      "Header": 151,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomUsers",
+      "Header": 152,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NewUnit",
+      "Header": 153,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UnitRemove",
+      "Header": 154,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UnitUpdated",
+      "Header": 155,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SystemDown",
+      "Header": 156,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SystemOpened",
+      "Header": 157,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserProfile",
+      "Header": 158,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserMatch",
+      "Header": 159,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CloseVotingDialog",
+      "Header": 160,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModeratorCaution",
+      "Header": 161,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UnitClosed",
+      "Header": 162,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModeratorMessage",
+      "Header": 163,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AgeCheckResult",
+      "Header": 164,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TrackingRequest",
+      "Header": 166,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ReregistrationRequired",
+      "Header": 167,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountUpdateStatus",
+      "Header": 169,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseRoomAdResult",
+      "Header": 207,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAd",
+      "Header": 208,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserCreditTransactions",
+      "Header": 209,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateOk",
+      "Header": 211,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VoucherRedeemOk",
+      "Header": 212,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VoucherRedeemError",
+      "Header": 213,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StackingHeightmapDiff",
+      "Header": 219,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserFlatCategories",
+      "Header": 221,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EventFlatCategories",
+      "Header": 222,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CanNotConnect",
+      "Header": 224,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SelectedBadges",
+      "Header": 228,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvailableBadges",
+      "Header": 229,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QueueMoveUpdate",
+      "Header": 230,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FullGameStatus",
+      "Header": 243,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GameStatus",
+      "Header": 244,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YouAreSpectator",
+      "Header": 254,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LevelEditorNotification",
+      "Header": 255,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SessionParams",
+      "Header": 257,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Interstitial",
+      "Header": 258,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomQueueStatus",
+      "Header": 259,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MessengerError",
+      "Header": 260,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InstantMessageError",
+      "Header": 261,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomInviteError",
+      "Header": 262,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BuddyList",
+      "Header": 263,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EmailChangeResult",
+      "Header": 265,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateAvatar",
+      "Header": 266,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserWardrobe",
+      "Header": 267,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountSafetyLockStatus",
+      "Header": 268,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EmailStatus",
+      "Header": 269,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HotLooks",
+      "Header": 270,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CallDeleted",
+      "Header": 273,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CallReply",
+      "Header": 274,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RegUpdateRequest",
+      "Header": 275,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PartnerStatus",
+      "Header": 276,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LegacyBannerHandshake",
+      "Header": 277,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DhInitHandshake",
+      "Header": 278,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DhCompleteHandshake",
+      "Header": 279,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CSubscriptionUserGifts",
+      "Header": 280,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountSafetyLockQuestions",
+      "Header": 281,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SpectatingEnded",
+      "Header": 283,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomForward",
+      "Header": 286,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvailabilityStatus",
+      "Header": 290,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InfoHotelClosing",
+      "Header": 291,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InfoHotelClosed",
+      "Header": 292,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvailabilityTime",
+      "Header": 293,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LoginFailedHotelClosed",
+      "Header": 294,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseNotAllowed",
+      "Header": 296,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FurniAliases",
+      "Header": 297,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SpectatorAmount",
+      "Header": 298,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ErrorReport",
+      "Header": 299,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SongInfo",
+      "Header": 300,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MachineSoundPackages",
+      "Header": 301,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserSoundPackages",
+      "Header": 302,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SongId",
+      "Header": 303,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountPreferences",
+      "Header": 308,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboGroupBadge",
+      "Header": 309,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FavoriteMembershipUpdate",
+      "Header": 310,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboGroupDetails",
+      "Header": 311,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OneWayDoorStatusChange",
+      "Header": 312,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MessengerConsoleMessages",
+      "Header": 313,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BuddyRequests",
+      "Header": 314,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AcceptFriendResult",
+      "Header": 315,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PollOffer",
+      "Header": 316,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PollContents",
+      "Header": 317,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PollError",
+      "Header": 318,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PendingCallsForHelp",
+      "Header": 319,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PendingCallsForHelpDeleted",
+      "Header": 320,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CallForHelpResult",
+      "Header": 321,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SongList",
+      "Header": 322,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SoundMachinePlayList",
+      "Header": 323,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SongMissingPackages",
+      "Header": 324,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PlayListInvalid",
+      "Header": 325,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SongListFull",
+      "Header": 326,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NowPlaying",
+      "Header": 327,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CallForHelpDisabled",
+      "Header": 328,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboGroupDeactivated",
+      "Header": 329,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SongAdded",
+      "Header": 331,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InvalidSongName",
+      "Header": 332,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserSongDiscs",
+      "Header": 333,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "JukeboxDiscs",
+      "Header": 334,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SongLocked",
+      "Header": 336,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "JukeboxPlayListFull",
+      "Header": 337,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InvalidSongData",
+      "Header": 338,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SongSaved",
+      "Header": 339,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MuteAllInRoomResponse",
+      "Header": 344,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomRating",
+      "Header": 345,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateFigure",
+      "Header": 347,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FollowFriendFailed",
+      "Header": 349,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientLatencyPingResponse",
+      "Header": 354,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ShowMysteryBoxWait",
+      "Header": 355,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CancelMysteryBoxWait",
+      "Header": 356,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GotMysteryBoxPrize",
+      "Header": 357,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendFurniStartConfirmLock",
+      "Header": 358,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendFurniCancelLock",
+      "Header": 359,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendFurniLockConfirmedOther",
+      "Header": 360,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserTypingStatusChange",
+      "Header": 361,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HighlightUser",
+      "Header": 362,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MiniMailArrived",
+      "Header": 363,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MiniMailUnreadCount",
+      "Header": 364,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomDimmerPresets",
+      "Header": 365,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomEventCanCreateEvent",
+      "Header": 367,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomEventEventTypes",
+      "Header": 368,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomEventEventsByEventType",
+      "Header": 369,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomEventEventInfo",
+      "Header": 370,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdAllowedRooms",
+      "Header": 371,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdListAds",
+      "Header": 372,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdUpdated",
+      "Header": 373,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdError",
+      "Header": 374,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdCancelled",
+      "Header": 375,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IgnoreUserResult",
+      "Header": 419,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RequestIgnoreList",
+      "Header": 420,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboSearchResult",
+      "Header": 435,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PossibleUserAchievements",
+      "Header": 436,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AchievementNotification",
+      "Header": 437,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ActivityPointNotification",
+      "Header": 438,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UniqueMachineId",
+      "Header": 439,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RespectNotification",
+      "Header": 440,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CatalogExpired",
+      "Header": 441,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AchievementScore",
+      "Header": 443,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ResolutionCompleted",
+      "Header": 446,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OfficialRooms",
+      "Header": 450,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuestRoomSearchResult",
+      "Header": 451,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PopularRoomTagsResult",
+      "Header": 452,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuestRoomResult",
+      "Header": 454,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NavigatorSettings",
+      "Header": 455,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomInfoUpdatedNotification",
+      "Header": 456,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomThumbnailUpdateResult",
+      "Header": 457,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Favourites",
+      "Header": 458,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FavouriteChanged",
+      "Header": 459,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvatarEffects",
+      "Header": 460,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvatarEffectAdded",
+      "Header": 461,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvatarEffectActivated",
+      "Header": 462,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvatarEffectExpired",
+      "Header": 463,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvatarEffectSelected",
+      "Header": 464,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomSettingsData",
+      "Header": 465,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomSettingsError",
+      "Header": 466,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomSettingsSaved",
+      "Header": 467,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomSettingsSaveError",
+      "Header": 468,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FloorHeightmap",
+      "Header": 470,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomEntryInfo",
+      "Header": 471,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomVisualizationSettings",
+      "Header": 472,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MultipleStuffDataUpdate",
+      "Header": 473,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomChatSettings",
+      "Header": 474,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomFilterSettings",
+      "Header": 475,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EnforceRoomCategorySelect",
+      "Header": 476,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SpecialRoomEffect",
+      "Header": 477,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomTypes",
+      "Header": 478,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomDance",
+      "Header": 480,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomExpression",
+      "Header": 481,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomCarryObject",
+      "Header": 482,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomJoiningGame",
+      "Header": 483,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomNotJoiningGame",
+      "Header": 484,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAvatarEffect",
+      "Header": 485,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAvatarSleeping",
+      "Header": 486,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomUseObject",
+      "Header": 488,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "JudgeGuiStatus",
+      "Header": 490,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StageOpenPerformerGui",
+      "Header": 491,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StageClosePerformerGui",
+      "Header": 492,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StageStartPlayingSong",
+      "Header": 493,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StageStopPlayingSong",
+      "Header": 494,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatCategoriesWithVisitorData",
+      "Header": 500,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradingAllowed",
+      "Header": 509,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatControllerAdded",
+      "Header": 510,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatControllerRemoved",
+      "Header": 511,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CanCreateRoom",
+      "Header": 512,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ConvertedRoomId",
+      "Header": 513,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StripItemNotTradeable",
+      "Header": 515,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientInfoFeedEnabled",
+      "Header": 517,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FaqClientFaqs",
+      "Header": 518,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FaqCategories",
+      "Header": 519,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FaqText",
+      "Header": 520,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FaqSearchResults",
+      "Header": 521,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FaqCategory",
+      "Header": 522,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IssueInfo",
+      "Header": 530,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModeratorInit",
+      "Header": 531,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IssuePickFailed",
+      "Header": 532,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModeratorUserInfo",
+      "Header": 533,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CfhChatLog",
+      "Header": 534,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomChatLog",
+      "Header": 535,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserChatLog",
+      "Header": 536,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomVisits",
+      "Header": 537,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModeratorRoomInfo",
+      "Header": 538,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModeratorActionResult",
+      "Header": 539,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IssueCloseNotification",
+      "Header": 540,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionAttached",
+      "Header": 541,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionStarted",
+      "Header": 542,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionEnded",
+      "Header": 543,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionDetached",
+      "Header": 544,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuideTicketSessionError",
+      "Header": 545,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionMessage",
+      "Header": 546,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionRequesterRoom",
+      "Header": 547,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionRequesterInvitedToGuideRoom",
+      "Header": 548,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionTyping",
+      "Header": 549,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuideOnDutyStatus",
+      "Header": 550,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModeratorToolPreferences",
+      "Header": 551,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CfhTopicsInit",
+      "Header": 552,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CfhNextSanction",
+      "Header": 553,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CfhSanctionStatus",
+      "Header": 554,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateRoomFloorPropertiesResponse",
+      "Header": 555,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuizData",
+      "Header": 560,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuizResult",
+      "Header": 561,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TalentTrack",
+      "Header": 565,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TalentTrackLevelUp",
+      "Header": 566,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TalentTrackLevel",
+      "Header": 567,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangeUserNameResult",
+      "Header": 570,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CheckUserNameResult",
+      "Header": 571,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserNameChanged",
+      "Header": 572,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HotelMergeNameChange",
+      "Header": 573,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangePetNameResult",
+      "Header": 596,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetPetConfigurationsResult",
+      "Header": 597,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetSupplementedNotification",
+      "Header": 598,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetBreeding",
+      "Header": 599,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetInventory",
+      "Header": 600,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetInfo",
+      "Header": 601,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetLevelNotification",
+      "Header": 602,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetAddedToInventory",
+      "Header": 603,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetRemovedFromInventory",
+      "Header": 604,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetCommands",
+      "Header": 605,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetRespectNotification",
+      "Header": 606,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetReceivedNotification",
+      "Header": 607,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetPlacingFailed",
+      "Header": 608,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetExperience",
+      "Header": 609,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceMakeOfferResult",
+      "Header": 610,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceCanMakeOfferResult",
+      "Header": 611,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceConfiguration",
+      "Header": 612,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceBuyOfferResult",
+      "Header": 613,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceCancelOfferResult",
+      "Header": 614,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceOpenOfferList",
+      "Header": 615,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceOwnOfferList",
+      "Header": 616,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceItemStats",
+      "Header": 617,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GiftWrappingConfiguration",
+      "Header": 620,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetRespectFailed",
+      "Header": 621,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IsOfferGiftable",
+      "Header": 622,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SelectableClubGiftInfo",
+      "Header": 623,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClubGiftSelected",
+      "Header": 624,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboClubOffers",
+      "Header": 625,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LoginWithPasswordAccountsDEPRECATED",
+      "Header": 626,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BadgePointLimits",
+      "Header": 627,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ActivityPoints",
+      "Header": 628,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BonusRareInfo",
+      "Header": 629,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboClubExtendOffer",
+      "Header": 630,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DirectClubBuyAllowed",
+      "Header": 631,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "XmasCalendarDailyOffer",
+      "Header": 632,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BadgeReceived",
+      "Header": 633,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboSnowWarGameTokensOffer",
+      "Header": 634,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BundleDiscountRuleset",
+      "Header": 635,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LimitedEditionSoldOut",
+      "Header": 636,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ProductOffer",
+      "Header": 637,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CatalogPageWithEarliestExpiry",
+      "Header": 638,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LimitedFurniTimingInfo",
+      "Header": 639,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EarnedCommunityGoalPrizes",
+      "Header": 640,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CatalogPageExpirationData",
+      "Header": 642,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CompetitionEntrySubmitResult",
+      "Header": 643,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CompetitionVotingInfo",
+      "Header": 644,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SecondsUntil",
+      "Header": 645,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CommunityGoalHallOfFame",
+      "Header": 646,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IsUserPartOfCompetition",
+      "Header": 647,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IsBadgeRequestFulfilled",
+      "Header": 648,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CurrentTimingCode",
+      "Header": 649,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsTrigger",
+      "Header": 650,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsAction",
+      "Header": 651,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsCondition",
+      "Header": 652,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsOpen",
+      "Header": 653,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsRewardResult",
+      "Header": 654,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsValidationError",
+      "Header": 655,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsSaveSuccess",
+      "Header": 656,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ConcurrentUsersGoalProgress",
+      "Header": 670,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PromoArticles",
+      "Header": 671,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CommunityGoalVoteAcknowledged",
+      "Header": 672,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Notification",
+      "Header": 680,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OfferRewardDelivered",
+      "Header": 685,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GameYouArePlayer",
+      "Header": 700,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GameNumberValue",
+      "Header": 701,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PerkAllowances",
+      "Header": 750,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangePassword",
+      "Header": 754,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CitizenshipVipPromoEnable",
+      "Header": 760,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CaptchaResponse",
+      "Header": 761,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CommunityGoalProgress",
+      "Header": 790,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EpicPopup",
+      "Header": 791,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CompetitionRoomsData",
+      "Header": 792,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NoOwnedRoomsAlert",
+      "Header": 793,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Quests",
+      "Header": 800,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuestCompleted",
+      "Header": 801,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Quest",
+      "Header": 802,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuestCancelled",
+      "Header": 803,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuestDaily",
+      "Header": 804,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuestsSeasonal",
+      "Header": 805,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HandItemReceived",
+      "Header": 809,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MotdResponse",
+      "Header": 810,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MuteTimeRemaining",
+      "Header": 811,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetDeviceTokensResponse",
+      "Header": 812,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LoginTokensCleared",
+      "Header": 813,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RestoreClientFromMinimizedState",
+      "Header": 815,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OpenPetPackageRequested",
+      "Header": 825,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OpenPetPackageResult",
+      "Header": 826,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SellablePetPalettes",
+      "Header": 827,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetBreedingResult",
+      "Header": 828,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendBarFindFriendsResult",
+      "Header": 831,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UnseenElements",
+      "Header": 832,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendBarEventNotification",
+      "Header": 833,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountProgressedInfo",
+      "Header": 898,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountProgressionInfo",
+      "Header": 899,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvatarList",
+      "Header": 901,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NewAvatarInfo",
+      "Header": 902,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeactivateAvatarInfo",
+      "Header": 903,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InitialRooms",
+      "Header": 904,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InitialRoomSelected",
+      "Header": 905,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RequestSpamWallPostItMessage",
+      "Header": 911,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomMessageNotification",
+      "Header": 912,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PossibleAchievement",
+      "Header": 913,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RelationshipStatusInfo",
+      "Header": 914,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ExtendedProfile",
+      "Header": 915,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboGroupJoinFailed",
+      "Header": 916,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildCreationInfo",
+      "Header": 917,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildEditInfo",
+      "Header": 918,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildEditorData",
+      "Header": 919,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildMembershipUpdated",
+      "Header": 921,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildMembershipRejected",
+      "Header": 922,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildEditFailed",
+      "Header": 923,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ExtendedProfileChanged",
+      "Header": 924,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildMemberMgmtFailed",
+      "Header": 925,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildMembers",
+      "Header": 926,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildMemberships",
+      "Header": 927,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildCreated",
+      "Header": 928,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildMemberFurniCountInHq",
+      "Header": 929,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatControllers",
+      "Header": 930,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GroupMembershipRequested",
+      "Header": 931,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GroupDetailsChanged",
+      "Header": 932,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UsersBannedFromRoom",
+      "Header": 943,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserUnbannedFromRoom",
+      "Header": 944,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MuteAllInRoom",
+      "Header": 945,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdatePetFigure",
+      "Header": 960,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildFurniContextmenuInfo",
+      "Header": 970,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MaintenanceStatus",
+      "Header": 980,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AvailableResolutionAchievements",
+      "Header": 988,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ResolutionProgress",
+      "Header": 989,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ConfirmBreedingRequest",
+      "Header": 990,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GoToBreedingNestFailure",
+      "Header": 991,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ConfirmBreedingResult",
+      "Header": 992,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NestBreedingSuccess",
+      "Header": 993,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CustomUserNotification",
+      "Header": 1001,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MysteryBoxKeys",
+      "Header": 1002,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BuildersClubMembershipStatus",
+      "Header": 1003,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BuildersClubFurniCount",
+      "Header": 1004,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2MetaData",
+      "Header": 1020,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2SearchResultBlocks",
+      "Header": 1021,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2LiftArea",
+      "Header": 1022,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2UserPreferences",
+      "Header": 1023,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2UserSavedSearches",
+      "Header": 1024,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2UserCollapsedCategories",
+      "Header": 1025,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CraftableProducts",
+      "Header": 1300,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CraftingRecipe",
+      "Header": 1301,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CraftingResult",
+      "Header": 1302,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CraftingRecipesAvailable",
+      "Header": 1304,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ProductOffers",
+      "Header": 1310,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CampaignCalendarData",
+      "Header": 1400,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CampaignCalendarDoorOpened",
+      "Header": 1401,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PickUpAllFurniAndResetHeightmap",
+      "Header": 1469,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StackingHelperHeightUpdate",
+      "Header": 1471,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomEntryTile",
+      "Header": 1472,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomOccupiedTiles",
+      "Header": 1473,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YoutubeDisplayVideo",
+      "Header": 1480,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YoutubePlayLists",
+      "Header": 1481,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YoutubeControlVideo",
+      "Header": 1482,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RentableSpaceInfo",
+      "Header": 1490,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RentableSpaceRentOk",
+      "Header": 1491,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RentableSpaceRentFailed",
+      "Header": 1492,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TryPhoneNumberResult",
+      "Header": 1500,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VerifyCodeResult",
+      "Header": 1501,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VerificationState",
+      "Header": 1502,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NuxNotComplete",
+      "Header": 1520,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NuxGiftOffer",
+      "Header": 1521,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TargetedOffer",
+      "Header": 1530,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TargetedOfferNotFound",
+      "Header": 1531,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TargetedOfferList",
+      "Header": 1532,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuideReportingStatus",
+      "Header": 1540,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionOfferedToGuide",
+      "Header": 1542,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionStarted",
+      "Header": 1543,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionResults",
+      "Header": 1544,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewTicketCreationResult",
+      "Header": 1545,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionDetached",
+      "Header": 1546,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionVotingStatus",
+      "Header": 1547,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewTicketResolution",
+      "Header": 1548,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountSafetyLock",
+      "Header": 1552,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PointElement",
+      "Header": 1560,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InClientLink",
+      "Header": 1561,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NoobnessLevel",
+      "Header": 1562,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SubmitGdprRequestResult",
+      "Header": 1570,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CancelGdprRequestResult",
+      "Header": 1571,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGdprRequestResult",
+      "Header": 1572,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForumStats",
+      "Header": 1600,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForumThreads",
+      "Header": 1601,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForumThreadMessages",
+      "Header": 1602,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForumThread",
+      "Header": 1604,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForumMessage",
+      "Header": 1605,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForumsList",
+      "Header": 1606,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UnreadForumsCount",
+      "Header": 1607,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PostForumThreadOk",
+      "Header": 1610,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PostForumMessageOk",
+      "Header": 1611,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserClassifications",
+      "Header": 1700,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CameraToken",
+      "Header": 1701,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhotoPurchaseSuccess",
+      "Header": 1702,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CameraPictureUrl",
+      "Header": 1703,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CameraPhotoPrice",
+      "Header": 1704,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhotoPublishStatus",
+      "Header": 1705,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PhotoCompetitionEntryStatus",
+      "Header": 1706,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomThumbnailStatus",
+      "Header": 1720,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Question",
+      "Header": 1750,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuestionAnswered",
+      "Header": 1751,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuestionFinished",
+      "Header": 1752,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Reputation",
+      "Header": 2550,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InventoryFurniByRoomResult",
+      "Header": 2998,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BotInventory",
+      "Header": 3028,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BotAddedToInventory",
+      "Header": 3029,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BotRemovedFromInventory",
+      "Header": 3030,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BotReceived",
+      "Header": 3031,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BotError",
+      "Header": 3032,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BotCommandConfigurationData",
+      "Header": 3033,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BotUpdateSkillList",
+      "Header": 3034,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BotForceOpenContextMenu",
+      "Header": 3035,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FigureSetIds",
+      "Header": 3036,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceCancelAllOffersResult",
+      "Header": 3048,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SendPetToHolidayResult",
+      "Header": 3049,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AgreementTypesResult",
+      "Header": 3240,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IdentityAgreements",
+      "Header": 3242,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildMembershipRequests",
+      "Header": 3266,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatFavouriteCount",
+      "Header": 3299,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StartCreateGuildResponse",
+      "Header": 3303,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CommitCreateGuildResponse",
+      "Header": 3304,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MeltdownWatchVerify",
+      "Header": 3600,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EarningStatus",
+      "Header": 3700,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClaimEarningResult",
+      "Header": 3701,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VaultStatus",
+      "Header": 3702,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateAccountPreferencesResult",
+      "Header": 3800,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LinkIdentificationMethodResult",
+      "Header": 3850,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BanInfo",
+      "Header": 3990,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AntiSpamTriggered",
+      "Header": 3998,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ServerDebugPong",
+      "Header": 3999,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DisconnectionReason",
+      "Header": 4000,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ProxyId",
+      "Header": 4001,
+      "Hash": "",
+      "Aliases": []
+    }
+  ],
+  "Outgoing": [
+    {
+      "Name": "InfoRetrieve",
+      "Header": 7,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCredits",
+      "Header": 8,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MessengerInit",
+      "Header": 12,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendListUpdate",
+      "Header": 15,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AddYourFavouriteRoom",
+      "Header": 19,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeleteYourFavouriteRoom",
+      "Header": 20,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeleteFlat",
+      "Header": 23,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SubscriptionGetUserInfo",
+      "Header": 26,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SubscriptionGetKickbackInfo",
+      "Header": 27,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CreateNewFlat",
+      "Header": 29,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SendMessage",
+      "Header": 33,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SendRoomInvite",
+      "Header": 34,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AcceptFriend",
+      "Header": 37,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeclineFriend",
+      "Header": 38,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RequestFriend",
+      "Header": 39,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveFriend",
+      "Header": 40,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HabboSearch",
+      "Header": 41,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ApprovePetName",
+      "Header": 42,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateAvatar",
+      "Header": 44,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CustomizeAvatarWithFurni",
+      "Header": 45,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Chat",
+      "Header": 52,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Quit",
+      "Header": 53,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Shout",
+      "Header": 55,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Whisper",
+      "Header": 56,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PickUpPetFromRoom",
+      "Header": 58,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GoToFlat",
+      "Header": 59,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PickUpAllItemsFromRoom",
+      "Header": 61,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatPropertyByItem",
+      "Header": 66,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PickItemUpFromRoom",
+      "Header": 67,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeUnaccept",
+      "Header": 68,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeAccept",
+      "Header": 69,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeClose",
+      "Header": 70,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeOpen",
+      "Header": 71,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeAddItem",
+      "Header": 72,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MoveRoomItem",
+      "Header": 73,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetStuffData",
+      "Header": 74,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Move",
+      "Header": 75,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ThrowDice",
+      "Header": 76,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DiceOff",
+      "Header": 77,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PresentOpen",
+      "Header": 78,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LookTo",
+      "Header": 79,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PassHandItem",
+      "Header": 80,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DropHandItem",
+      "Header": 81,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PassHandItemToPet",
+      "Header": 82,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetItemData",
+      "Header": 83,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetStickyData",
+      "Header": 84,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveItem",
+      "Header": 85,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Posture",
+      "Header": 86,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GiveSupplementToPet",
+      "Header": 87,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeAddItems",
+      "Header": 89,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PlaceStuffFromStripDEPRECATED",
+      "Header": 90,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MoveItemDEPRECATED",
+      "Header": 91,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AmbassadorAlert",
+      "Header": 92,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Dance",
+      "Header": 93,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Expression",
+      "Header": 94,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "KickUser",
+      "Header": 95,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AssignRights",
+      "Header": 96,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveRights",
+      "Header": 97,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveOwnRights",
+      "Header": 99,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseFromCatalog",
+      "Header": 100,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCatalogIndex",
+      "Header": 101,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCatalogPage",
+      "Header": 102,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ShowSign",
+      "Header": 104,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PlaceRoomItem",
+      "Header": 105,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PlaceWallItem",
+      "Header": 106,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MoveWallItem",
+      "Header": 108,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RelinkTeleports",
+      "Header": 114,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Goaway",
+      "Header": 115,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetDonationSettings",
+      "Header": 117,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Donate",
+      "Header": 118,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRentOrBuyoutOffer",
+      "Header": 120,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ExtendRentOrBuyoutFurniInRoom",
+      "Header": 121,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ExtendRentOrBuyoutFurniInInventory",
+      "Header": 122,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RedeemVoucherCode",
+      "Header": 129,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RedeemVoucherCodeWithHc",
+      "Header": 130,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetUserFlatCategories",
+      "Header": 151,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetEventFlatCats",
+      "Header": 152,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveAllRights",
+      "Header": 155,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetAvailableBadges",
+      "Header": 157,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetSelectedBadges",
+      "Header": 158,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSelectedBadges",
+      "Header": 159,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InterstitialShown",
+      "Header": 181,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetInterstitial",
+      "Header": 182,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ConvertFurniToCredits",
+      "Header": 183,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Pong",
+      "Header": 196,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientSuspended",
+      "Header": 197,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientResumed",
+      "Header": 198,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModerationAction",
+      "Header": 200,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InitDhHandshake",
+      "Header": 207,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CompleteDhHandshake",
+      "Header": 208,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomQueueChange",
+      "Header": 211,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetOpeningHours",
+      "Header": 212,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetWallItemAnimationState",
+      "Header": 214,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetFurniAliases",
+      "Header": 215,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSpectatorAmount",
+      "Header": 216,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSongInfo",
+      "Header": 221,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSongId",
+      "Header": 222,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetChatPreferences",
+      "Header": 227,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetAccountPreferences",
+      "Header": 228,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetSoundSettings",
+      "Header": 229,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetHabboGroupBadges",
+      "Header": 230,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetHabboGroupDetails",
+      "Header": 231,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EnterOneWayDoor",
+      "Header": 232,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetFriendRequests",
+      "Header": 233,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StartPoll",
+      "Header": 234,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RejectPoll",
+      "Header": 235,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PollAnswer",
+      "Header": 236,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetPendingCallsForHelp",
+      "Header": 237,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeletePendingCallsForHelp",
+      "Header": 238,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetRoomInvitePreferences",
+      "Header": 240,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetRoomCameraPreferences",
+      "Header": 241,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetNewNavigatorPreferences",
+      "Header": 242,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetUiFlags",
+      "Header": 243,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetChatStylePreference",
+      "Header": 244,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSoundMachinePlayList",
+      "Header": 245,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SpinWheelOfFortune",
+      "Header": 247,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetNowPlaying",
+      "Header": 249,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AddJukeboxDisc",
+      "Header": 255,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveJukeboxDisc",
+      "Header": 256,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetJukeboxDiscs",
+      "Header": 258,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetUserSongDiscs",
+      "Header": 259,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveAllJukeboxDiscs",
+      "Header": 260,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RateFlat",
+      "Header": 261,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FollowFriend",
+      "Header": 262,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VisitUser",
+      "Header": 264,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CancelFriendRequest",
+      "Header": 266,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetFurniRandomState",
+      "Header": 314,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientLatencyPingRequest",
+      "Header": 315,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientLatencyPingReport",
+      "Header": 316,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserStartTyping",
+      "Header": 317,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserCancelTyping",
+      "Header": 318,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IgnoreUser",
+      "Header": 319,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IgnoreAvatarId",
+      "Header": 320,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetIgnoreList",
+      "Header": 321,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UnignoreUser",
+      "Header": 322,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomBanWithDuration",
+      "Header": 330,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomMuteUser",
+      "Header": 331,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomMuteUnmuteAll",
+      "Header": 332,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomUnmuteUser",
+      "Header": 333,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomDimmerEditPresets",
+      "Header": 341,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomDimmerSavePreset",
+      "Header": 342,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomDimmerChangeState",
+      "Header": 343,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomMuteAll",
+      "Header": 344,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdCancelAd",
+      "Header": 347,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdEditAd",
+      "Header": 348,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseRoomAd",
+      "Header": 349,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdGetRooms",
+      "Header": 352,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdListAds",
+      "Header": 353,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdEventTabViewed",
+      "Header": 354,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdEventTabAdClicked",
+      "Header": 356,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdPurchaseInitiated",
+      "Header": 357,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetUserAchievements",
+      "Header": 370,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RespectUser",
+      "Header": 371,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UseAvatarEffect",
+      "Header": 372,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ActivateAvatarEffect",
+      "Header": 373,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseAndActivateAvatarEffect",
+      "Header": 374,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetWardrobe",
+      "Header": 375,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SaveWardrobeOutfit",
+      "Header": 376,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MysteryBoxWaitingCanceled",
+      "Header": 377,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ResetResolutionAchievement",
+      "Header": 378,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetUserAchievementsForAResolution",
+      "Header": 379,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetOfficialRooms",
+      "Header": 380,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendFurnitureLockConfirm",
+      "Header": 381,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetPopularRoomTags",
+      "Header": 382,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCategoriesWithVisitorCount",
+      "Header": 383,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateNavigatorSettings",
+      "Header": 384,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuestRoom",
+      "Header": 385,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateRoomThumbnail",
+      "Header": 386,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CanCreateRoom",
+      "Header": 387,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ConvertGlobalRoomId",
+      "Header": 388,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomEntryData",
+      "Header": 390,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FlatOpc",
+      "Header": 391,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UseStuff",
+      "Header": 392,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UseWallItem",
+      "Header": 393,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomSettings",
+      "Header": 400,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SaveRoomSettings",
+      "Header": 401,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeConfirmAccept",
+      "Header": 402,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeConfirmDecline",
+      "Header": 403,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetInventory",
+      "Header": 404,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TradeRemoveItem",
+      "Header": 405,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetInventoryPeer",
+      "Header": 406,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateRoomFilter",
+      "Header": 407,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomFilter",
+      "Header": 408,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateRoomCategoryAndTrade",
+      "Header": 409,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StageStartPerformance",
+      "Header": 410,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StageVotePerformance",
+      "Header": 411,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LoginWithTicket",
+      "Header": 415,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetClientFaqs",
+      "Header": 416,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetFaqCategories",
+      "Header": 417,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetFaqText",
+      "Header": 418,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SearchFaqs",
+      "Header": 419,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetFaqCategory",
+      "Header": 420,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LogFlashPerformance",
+      "Header": 421,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LogLagWarning",
+      "Header": 422,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LogAirPerformance",
+      "Header": 423,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PopularRoomsSearch",
+      "Header": 430,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomsWithHighestScoreSearch",
+      "Header": 431,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MyFriendsRoomsSearch",
+      "Header": 432,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomsWhereMyFriendsAreSearch",
+      "Header": 433,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MyRoomsSearch",
+      "Header": 434,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MyFavouriteRoomsSearch",
+      "Header": 435,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MyRoomHistorySearch",
+      "Header": 436,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomTextSearch",
+      "Header": 437,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomTagSearch",
+      "Header": 438,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MyFrequentlyVisitedRoomsSearch",
+      "Header": 440,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildBaseSearch",
+      "Header": 442,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomAdSearch",
+      "Header": 443,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MyRoomRightsSearch",
+      "Header": 444,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MyGuildBasesSearch",
+      "Header": 445,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MyRecommendedRoomsSearch",
+      "Header": 446,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CloseIssueDefaultAction",
+      "Header": 449,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PickIssues",
+      "Header": 450,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ReleaseIssues",
+      "Header": 451,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CloseIssues",
+      "Header": 452,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CreateIssue",
+      "Header": 453,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetModeratorUserInfo",
+      "Header": 454,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetUserChatLog",
+      "Header": 455,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomChatLog",
+      "Header": 456,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCfhChatLog",
+      "Header": 457,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomVisits",
+      "Header": 458,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetModeratorRoomInfo",
+      "Header": 459,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModerateRoom",
+      "Header": 460,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModAlert",
+      "Header": 461,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModMessage",
+      "Header": 462,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModKick",
+      "Header": 463,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModBan",
+      "Header": 464,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModMute",
+      "Header": 465,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModToolPreferences",
+      "Header": 466,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModToolNextSanction",
+      "Header": 467,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModTradingLock",
+      "Header": 468,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CreateImIssue",
+      "Header": 469,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangeAvatarNameInRoom",
+      "Header": 470,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CheckAvatarName",
+      "Header": 471,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseFromCatalogAsGift",
+      "Header": 472,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGiftWrappingConfiguration",
+      "Header": 473,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSelectableClubGiftInfo",
+      "Header": 474,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SelectClubGift",
+      "Header": 475,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangeAvatarName",
+      "Header": 476,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DefaultSanction",
+      "Header": 477,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomTypes",
+      "Header": 478,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetClothingChangeFurnitureData",
+      "Header": 480,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LogToEventLog",
+      "Header": 482,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ToggleRoomStaffPick",
+      "Header": 483,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangeAvatarMotto",
+      "Header": 484,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForwardToARandomPromotedRoom",
+      "Header": 485,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForwardToSomeRoom",
+      "Header": 486,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendBarHelperFindFriends",
+      "Header": 490,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetRelationshipStatus",
+      "Header": 491,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRelationshipStatusInfo",
+      "Header": 492,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetEventStream",
+      "Header": 500,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetEventStreamPublishingAllowed",
+      "Header": 501,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StreamLike",
+      "Header": 502,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StreamStatus",
+      "Header": 503,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetEventStreamForAccount",
+      "Header": 504,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StreamComment",
+      "Header": 505,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetStreamNotificationCount",
+      "Header": 506,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetStreamNotifications",
+      "Header": 507,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Disconnect",
+      "Header": 512,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCommunityGoalProgress",
+      "Header": 520,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SubmitRoomToCompetition",
+      "Header": 521,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomCompetitionInit",
+      "Header": 522,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VoteForRoom",
+      "Header": 523,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSecondsUntil",
+      "Header": 524,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForwardToRandomCompetitionRoom",
+      "Header": 525,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CompetitionRoomsSearch",
+      "Header": 526,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCommunityGoalHallOfFame",
+      "Header": 527,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForwardToACompetitionRoom",
+      "Header": 528,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "IsUserPartOfCompetition",
+      "Header": 529,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCurrentTimingCode",
+      "Header": 530,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ForwardToASubmittableRoom",
+      "Header": 531,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetConcurrentUsersGoalProgress",
+      "Header": 532,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RequestConcurrentUsersGoalReward",
+      "Header": 533,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionCreate",
+      "Header": 541,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionGuideDecides",
+      "Header": 542,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionRequesterCancels",
+      "Header": 543,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionResolved",
+      "Header": 544,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionFeedback",
+      "Header": 545,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuideOnDutyUpdate",
+      "Header": 546,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionMessage",
+      "Header": 547,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionGetRequesterRoom",
+      "Header": 548,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionReported",
+      "Header": 550,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionInviteRequester",
+      "Header": 551,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HelpRequestSessionTyping",
+      "Header": 552,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuizGetQuestions",
+      "Header": 560,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "QuizPostAnswers",
+      "Header": 561,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetTalentTrack",
+      "Header": 565,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetTalentTrackLevel",
+      "Header": 566,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuideAdvertisementRead",
+      "Header": 567,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangePetName",
+      "Header": 596,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetPetConfigurations",
+      "Header": 597,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangePassword",
+      "Header": 754,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LoginWithPassword",
+      "Header": 755,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LoginWithPasswordDEPRECATED",
+      "Header": 756,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LoginWithFacebookToken",
+      "Header": 757,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LoginWithToken",
+      "Header": 758,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CreateAccount",
+      "Header": 759,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CaptchaRequest",
+      "Header": 761,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClearDeviceLoginToken",
+      "Header": 811,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetDeviceLoginTokens",
+      "Header": 812,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UniqueMachineId",
+      "Header": 813,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientStatistics",
+      "Header": 815,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetAccountProgressionInfo",
+      "Header": 899,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetHotlooks",
+      "Header": 900,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetAvatarList",
+      "Header": 901,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CreateNewAvatar",
+      "Header": 902,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeactivateAvatar",
+      "Header": 903,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetInitialRooms",
+      "Header": 904,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SelectInitialRoom",
+      "Header": 905,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCfhStatus",
+      "Header": 1000,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomNetworkForward",
+      "Header": 1010,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2Init",
+      "Header": 1020,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2Search",
+      "Header": 1021,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2AddSavedSearch",
+      "Header": 1023,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2DeleteSavedSearch",
+      "Header": 1024,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2AddCollapsedCategory",
+      "Header": 1025,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2RemoveCollapsedCategory",
+      "Header": 1026,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Navigator2SetSearchCodeViewMode",
+      "Header": 1027,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VersionCheck",
+      "Header": 1170,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCraftableProducts",
+      "Header": 1300,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCraftingRecipe",
+      "Header": 1301,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Craft",
+      "Header": 1302,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CraftSecret",
+      "Header": 1303,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCraftingRecipesAvailable",
+      "Header": 1304,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetProductOffers",
+      "Header": 1310,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OpenCampaignCalendarDoor",
+      "Header": 1401,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StaffOpenCampaignCalendarDoor",
+      "Header": 1402,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PickUpAllFurniAndResetHeightmap",
+      "Header": 1469,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateRoomFloorProperties",
+      "Header": 1470,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StackingHelperSetCaretHeight",
+      "Header": 1471,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomEntryTile",
+      "Header": 1473,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomOccupiedTiles",
+      "Header": 1474,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YoutubeDisplayGetStatus",
+      "Header": 1480,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YoutubeDisplaySetPlaylist",
+      "Header": 1481,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "YoutubeDisplayControlPlayback",
+      "Header": 1482,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RentableSpaceGetInfo",
+      "Header": 1490,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RentableSpaceRentSpace",
+      "Header": 1491,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RentableSpaceExtendRent",
+      "Header": 1492,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RentableSpaceCancel",
+      "Header": 1493,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BuildersClubPlaceRoomItem",
+      "Header": 1494,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BuildersClubPlaceWallItem",
+      "Header": 1495,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BuildersClubQueryFurniCount",
+      "Header": 1496,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TryPhoneNumber",
+      "Header": 1500,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VerifyCode",
+      "Header": 1501,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetPhoneNumberCollectionStatus",
+      "Header": 1502,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GiveGift",
+      "Header": 1503,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RestartPhoneNumberCollection",
+      "Header": 1504,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GiveStarGems",
+      "Header": 1505,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "NuxGetGifts",
+      "Header": 1522,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ScriptProceed",
+      "Header": 1523,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetNextTargetedOffer",
+      "Header": 1530,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseTargetedOffer",
+      "Header": 1531,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetTargetedOfferState",
+      "Header": 1532,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ShopTargetedOfferViewed",
+      "Header": 1533,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetTargetedOffer",
+      "Header": 1534,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetTargetedOfferList",
+      "Header": 1535,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuideReportingStatus",
+      "Header": 1540,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionCreate",
+      "Header": 1541,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionGuideDecidesOnOffer",
+      "Header": 1542,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionGuideVote",
+      "Header": 1544,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChatReviewSessionGuideDetached",
+      "Header": 1546,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountSafetylockGetQuestions",
+      "Header": 1550,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountSafetylockUnlock",
+      "Header": 1551,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AccountSafetyLock",
+      "Header": 1552,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SubmitGdprRequest",
+      "Header": 1570,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CancelGdprRequest",
+      "Header": 1571,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGdprRequest",
+      "Header": 1572,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetForumStats",
+      "Header": 1600,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetForumThreads",
+      "Header": 1601,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetForumThreadMessages",
+      "Header": 1602,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateForumReadMarkers",
+      "Header": 1603,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetForumThread",
+      "Header": 1604,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetForumsList",
+      "Header": 1605,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateForumSettings",
+      "Header": 1606,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetUnreadForumsCount",
+      "Header": 1607,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PostForumMessage",
+      "Header": 1610,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModerateForumThread",
+      "Header": 1612,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ModerateForumMessage",
+      "Header": 1613,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ReportForumThread",
+      "Header": 1614,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ReportForumMessage",
+      "Header": 1615,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateForumThread",
+      "Header": 1616,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetRoomUsersClassification",
+      "Header": 1700,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetPeerUsersClassification",
+      "Header": 1701,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ReportSelfie",
+      "Header": 1800,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ReportPhoto",
+      "Header": 1801,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserFeedback",
+      "Header": 1900,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetReputation",
+      "Header": 2550,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetFurniByRoomInventory",
+      "Header": 2998,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetInventoryForDebugging",
+      "Header": 2999,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetPetInventory",
+      "Header": 3000,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetNewPetInfo",
+      "Header": 3001,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PlacePetToFlat",
+      "Header": 3002,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemovePetFromFlat",
+      "Header": 3003,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetAvailablePetCommands",
+      "Header": 3004,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RespectPet",
+      "Header": 3005,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OpenPetPackage",
+      "Header": 3006,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSellablePetPalettes",
+      "Header": 3007,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CustomizePetWithFurni",
+      "Header": 3008,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveSaddle",
+      "Header": 3009,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceMakeOffer",
+      "Header": 3010,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceGetConfiguration",
+      "Header": 3011,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceCanMakeOffer",
+      "Header": 3012,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceBuyTokens",
+      "Header": 3013,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceBuyOffer",
+      "Header": 3014,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceCancelOffer",
+      "Header": 3015,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceRedeemOfferCredits",
+      "Header": 3016,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MountPet",
+      "Header": 3017,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceSearchOffers",
+      "Header": 3018,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceListOwnOffers",
+      "Header": 3019,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceGetItemStats",
+      "Header": 3020,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TogglePetRidingAccessRights",
+      "Header": 3021,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PetSelected",
+      "Header": 3022,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MovePetInFlat",
+      "Header": 3023,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "BreedPets",
+      "Header": 3024,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "HarvestPet",
+      "Header": 3025,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "TogglePetBreedingRights",
+      "Header": 3026,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PlaceBotToFlat",
+      "Header": 3027,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetBotInventory",
+      "Header": 3028,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CommandBot",
+      "Header": 3029,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetIsOfferGiftable",
+      "Header": 3030,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetHabboClubOffers",
+      "Header": 3031,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetBadgePointLimits",
+      "Header": 3032,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChargeStuff",
+      "Header": 3033,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarkCatalogNewAdditionsPageOpened",
+      "Header": 3034,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetHabboVipMembershipExtendOffer",
+      "Header": 3035,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseDiscountedVipMembershipExtension",
+      "Header": 3036,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseDiscountedBasicMembershipExtension",
+      "Header": 3037,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetHabboBasicMembershipExtendOffer",
+      "Header": 3038,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSnowWarGameTokensOffer",
+      "Header": 3039,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchaseSnowWarGameTokens",
+      "Header": 3040,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetBundleDiscountRuleset",
+      "Header": 3041,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetProductOffer",
+      "Header": 3042,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RequestBadge",
+      "Header": 3043,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetIsBadgeRequestFulfilled",
+      "Header": 3044,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ConfirmPetBreeding",
+      "Header": 3045,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CancelPetBreeding",
+      "Header": 3046,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CompostPlant",
+      "Header": 3047,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MarketplaceCancelAllOffers",
+      "Header": 3048,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SendPetToHoliday",
+      "Header": 3049,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsUpdateTrigger",
+      "Header": 3050,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsUpdateAction",
+      "Header": 3051,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsUpdateCondition",
+      "Header": 3052,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsOpen",
+      "Header": 3053,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UserDefinedRoomEventsApplySnapshot",
+      "Header": 3054,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveBotFromFlat",
+      "Header": 3060,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetQuests",
+      "Header": 3101,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AcceptQuest",
+      "Header": 3102,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RejectQuest",
+      "Header": 3106,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OpenQuestTracker",
+      "Header": 3107,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StartCampaign",
+      "Header": 3108,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetDailyQuest",
+      "Header": 3109,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetMessageOfTheDay",
+      "Header": 3110,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ResetUnseenCounter",
+      "Header": 3111,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ActivateQuest",
+      "Header": 3112,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CancelQuest",
+      "Header": 3113,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSeasonalQuests",
+      "Header": 3114,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "FriendRequestQuestComplete",
+      "Header": 3210,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetIdentityAgreementTypes",
+      "Header": 3240,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SaveAgreements",
+      "Header": 3241,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetIdentityAgreements",
+      "Header": 3242,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetEmailStatus",
+      "Header": 3250,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ChangeEmail",
+      "Header": 3251,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PlacePostIt",
+      "Header": 3254,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AddSpamWallPostIt",
+      "Header": 3255,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetMannequinFigure",
+      "Header": 3256,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "JoinHabboGroup",
+      "Header": 3257,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SelectFavouriteHabboGroup",
+      "Header": 3258,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeselectFavouriteHabboGroup",
+      "Header": 3259,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetExtendedProfile",
+      "Header": 3260,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuildCreationInfo",
+      "Header": 3261,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CreateGuild",
+      "Header": 3262,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuildEditInfo",
+      "Header": 3263,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateGuildIdentity",
+      "Header": 3264,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuildEditorData",
+      "Header": 3265,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuildMembershipRequests",
+      "Header": 3266,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ApproveMembershipRequest",
+      "Header": 3267,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RejectMembershipRequest",
+      "Header": 3268,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ApproveAllMembershipRequests",
+      "Header": 3269,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveAdminRightsFromMember",
+      "Header": 3270,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "AddAdminRightsToMember",
+      "Header": 3271,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "KickMember",
+      "Header": 3272,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateGuildSettings",
+      "Header": 3273,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetFlatControllers",
+      "Header": 3274,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateGuildBadge",
+      "Header": 3275,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateGuildColors",
+      "Header": 3276,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuildMembers",
+      "Header": 3277,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuildMemberships",
+      "Header": 3278,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GuildMemberHqFurniCount",
+      "Header": 3279,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetMannequinName",
+      "Header": 3280,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetGuildFurniContextMenuInfo",
+      "Header": 3281,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetDirectClubBuyAllowed",
+      "Header": 3282,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetExtendedProfileByUsername",
+      "Header": 3283,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetSeasonalCalendarDailyOffer",
+      "Header": 3284,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetRoomSessionTags",
+      "Header": 3285,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCatalogPageWithEarliestExpiry",
+      "Header": 3286,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetLimitedFurniTimingInfo",
+      "Header": 3287,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCommunityGoalEarnedPrizes",
+      "Header": 3288,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RedeemCommunityGoalPrize",
+      "Header": 3289,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "DeactivateGuild",
+      "Header": 3290,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetCatalogPageExpiration",
+      "Header": 3291,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "SetRoomBackgroundColorData",
+      "Header": 3292,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetBannedUsers",
+      "Header": 3293,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RoomUnbanUser",
+      "Header": 3294,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetPromoArticles",
+      "Header": 3295,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetBonusRareInfo",
+      "Header": 3296,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "OpenMysteryTrophy",
+      "Header": 3297,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CommunityGoalVote",
+      "Header": 3298,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetFlatFavouriteCount",
+      "Header": 3299,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetExternalImageFurniData",
+      "Header": 3302,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "StartCreateGuild",
+      "Header": 3303,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CommitCreateGuild",
+      "Header": 3304,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetBotCommandConfigurationData",
+      "Header": 3330,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveUnseenElements",
+      "Header": 3420,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RemoveUnseenElement",
+      "Header": 3421,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RequestCameraToken",
+      "Header": 3501,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RenderRoom",
+      "Header": 3502,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PurchasePhoto",
+      "Header": 3503,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "PublishPhoto",
+      "Header": 3504,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "InitCamera",
+      "Header": 3505,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "CompetitionPhoto",
+      "Header": 3506,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "RenderAndSaveRoomThumbnailPhoto",
+      "Header": 3520,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "MeltdownWatchVerify",
+      "Header": 3600,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "EarningStatus",
+      "Header": 3700,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClaimEarning",
+      "Header": 3701,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "VaultStatus",
+      "Header": 3702,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "WithdrawVault",
+      "Header": 3703,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UpdateAccountPreferences",
+      "Header": 3800,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "UnlinkIdentificationMethod",
+      "Header": 3850,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "LinkIdentificationMethod",
+      "Header": 3851,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingPeerSlow",
+      "Header": 3900,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingPeerFast",
+      "Header": 3901,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingRoomSlow",
+      "Header": 3902,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingRoomFast",
+      "Header": 3903,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingMessengerSlow",
+      "Header": 3908,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingMessengerFast",
+      "Header": 3909,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingNavigatorSlow",
+      "Header": 3910,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingNavigatorFast",
+      "Header": 3911,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingRoomDirectorySlow",
+      "Header": 3912,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingRoomDirectoryFast",
+      "Header": 3913,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingProxySlow",
+      "Header": 3914,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "ClientDebugPingProxyFast",
+      "Header": 3915,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "Hello",
+      "Header": 4000,
+      "Hash": "",
+      "Aliases": []
+    },
+    {
+      "Name": "GetProxyId",
+      "Header": 4001,
+      "Hash": "",
+      "Aliases": []
+    }
+  ]
+}

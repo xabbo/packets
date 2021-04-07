@@ -6,11 +6,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
+using Xabbo.Messages;
 using Xabbo.Interceptor;
 using Xabbo.Interceptor.GEarth;
 
 using b7.Packets.Services;
 using b7.Packets.ViewModel;
+
 
 namespace b7.Packets
 {
@@ -25,6 +27,8 @@ namespace b7.Packets
             services.AddSingleton<IContext, WpfContext>(
                 provider => ActivatorUtilities.CreateInstance<WpfContext>(provider, Dispatcher)
             );
+
+            services.AddSingleton<IMessageManager, UnifiedMessageManager>();
 
             string interceptorService = context.Configuration.GetValue<string>("Interceptor:Service");
             switch (interceptorService.ToLower())

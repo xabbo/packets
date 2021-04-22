@@ -195,7 +195,7 @@ namespace b7.Packets.ViewModel
             try
             {
                 IPacket packet = _composer.ComposePacket(Destination.Server, ComposerText);
-                _interceptor.SendToServerAsync(packet).AsTask();
+                _interceptor.SendToServerAsync(packet);
 
                 AddLog(new PacketLogViewModel(packet));
             }

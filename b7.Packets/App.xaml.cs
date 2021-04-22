@@ -7,12 +7,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
 using Xabbo.Messages;
+using Xabbo.GEarth;
 using Xabbo.Interceptor;
 using Xabbo.Interceptor.GEarth;
 
 using b7.Packets.Services;
 using b7.Packets.ViewModel;
-
 
 namespace b7.Packets
 {
@@ -28,7 +28,9 @@ namespace b7.Packets
                 provider => ActivatorUtilities.CreateInstance<WpfContext>(provider, Dispatcher)
             );
 
-            services.AddSingleton<IMessageManager, UnifiedMessageManager>();
+            services.AddSingleton<IMessageManager, UnifiedMessageManager>(provider =>
+                new UnifiedMessageManager(context.Configuration.GetValue("Messages:MapFilePath", "messages.ini"))
+            );
 
             string interceptorService = context.Configuration.GetValue<string>("Interceptor:Service");
             switch (interceptorService.ToLower())

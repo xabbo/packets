@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Xabbo.Messages;
 using Xabbo.GEarth;
 using Xabbo.Interceptor;
-using Xabbo.Interceptor.GEarth;
 
 using b7.Packets.Services;
 using b7.Packets.ViewModel;
@@ -45,7 +44,7 @@ namespace b7.Packets
                             Author = "b7"
                         });
 
-                        services.AddSingleton<IRemoteInterceptor, GEarthRemoteInterceptor>();
+                        services.AddSingleton<IRemoteInterceptor, GEarthExtension>();
                     }
                     break;
                 default:

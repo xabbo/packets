@@ -44,7 +44,8 @@
 
                 <ListView Grid.Row="1" Margin="2" ItemsSource="{Binding Logs}"
                   SelectedItem="{Binding SelectedItem}"
-                  SelectionChanged="ListView_SelectionChanged">
+                  SelectionChanged="ListView_SelectionChanged"
+                          Grid.IsSharedSizeScope="True">
                     <ListView.InputBindings>
                         <KeyBinding Command="{Binding ClearLogsCommand}" Key="E" Modifiers="Ctrl" />
                     </ListView.InputBindings>
@@ -88,8 +89,56 @@
                                 <GridViewColumn Width="120" Header="name">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Name}"
-                                               TextTrimming="CharacterEllipsis" />
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" SharedSizeGroup="SzClient" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Border Margin="4,0" Padding="2,0"
+                                                        HorizontalAlignment="Right"
+                                                        CornerRadius="2"
+                                                        Opacity="0.6">
+                                                    <Border.Style>
+                                                        <Style TargetType="{x:Type Border}">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding IsOutgoing}" Value="True">
+                                                                    <Setter Property="Background" Value="DarkCyan" />
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding IsOutgoing}" Value="False">
+                                                                    <Setter Property="Background" Value="DarkRed" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Border.Style>
+                                                    <TextBlock Foreground="White">
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="{x:Type TextBlock}">
+                                                                <Setter Property="Text" Value="?" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding IsFlashName}" Value="True">
+                                                                        <Setter Property="Text" Value="f" />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding IsUnityName}" Value="True">
+                                                                        <Setter Property="Text" Value="u" />
+                                                                    </DataTrigger>
+                                                                    <MultiDataTrigger>
+                                                                        <MultiDataTrigger.Conditions>
+                                                                            <Condition Binding="{Binding IsFlashName}" Value="True" />
+                                                                            <Condition Binding="{Binding IsUnityName}" Value="True" />
+                                                                        </MultiDataTrigger.Conditions>
+                                                                        <Setter Property="Text" Value="*" />
+                                                                    </MultiDataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                    </TextBlock>
+                                                </Border>
+                                                <TextBlock 
+                                                    Grid.Column="1" 
+                                                    Text="{Binding Name}"
+                                                    TextTrimming="CharacterEllipsis"
+                                                />
+                                            </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>

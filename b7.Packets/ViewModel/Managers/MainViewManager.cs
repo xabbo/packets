@@ -32,7 +32,7 @@ namespace b7.Packets.ViewModel
 
         public Task InitializeAsync()
         {
-            _interceptor.Start();
+            _interceptor.RunAsync();
 
             // Switch tabs when loading a packet in the structure view
             Messenger.Default.Register<GenericMessage<PacketLogViewModel>>(

@@ -180,9 +180,9 @@ namespace b7.Packets.ViewModel
             try
             {
                 IPacket packet = _composer.ComposePacket(Destination.Client, ComposerText);
-                _interceptor.SendToClientAsync(packet);
+                _interceptor.Send(packet);
 
-                AddLog(new PacketLogViewModel(packet));
+                AddLog(new PacketLogViewModel(_interceptor.Messages, packet));
             }
             catch (Exception ex)
             {
@@ -195,9 +195,9 @@ namespace b7.Packets.ViewModel
             try
             {
                 IPacket packet = _composer.ComposePacket(Destination.Server, ComposerText);
-                _interceptor.SendToServerAsync(packet);
+                _interceptor.Send(packet);
 
-                AddLog(new PacketLogViewModel(packet));
+                AddLog(new PacketLogViewModel(_interceptor.Messages, packet));
             }
             catch (Exception ex)
             {
@@ -236,7 +236,7 @@ namespace b7.Packets.ViewModel
                 default: break;
             }
 
-            AddLog(new PacketLogViewModel(e.Packet));
+            AddLog(new PacketLogViewModel(_interceptor.Messages, e.Packet));
         }
 
         public void UpdateSelection(IList selection)

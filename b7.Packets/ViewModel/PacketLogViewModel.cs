@@ -17,8 +17,22 @@ namespace b7.Packets.ViewModel
         public string Name { get; }
         public int Length { get; }
 
-        public PacketLogViewModel(IReadOnlyPacket packet)
+        public bool IsFlashName { get; }
+        public bool IsUnityName { get; }
+
+        public PacketLogViewModel(IMessageManager messages, IReadOnlyPacket packet)
         {
+            if (messages.TryGetInfoByHeader(packet.Header.Destination.ToDirection(), packet.Header, out MessageInfo? messageInfo))
+            {
+                Name = messageInfo.Name;
+                IsUnityName = string.Equals(Name, messageInfo.UnityName, StringComparison.OrdinalIgnoreCase);
+                IsFlashName = string.Equals(Name, messageInfo.FlashName, StringComparison.OrdinalIgnoreCase);
+            }
+            else
+            {
+                Name = packet.Header.Value.ToString();
+            }
+
             Packet = packet;
 
             Timestamp = DateTime.Now;
@@ -35,7 +49,7 @@ namespace b7.Packets.ViewModel
                 IsOutgoing = false;
 
             Id = packet.Header;
-            Name = packet.Header.Name ?? packet.Header.Value.ToString();
+            // Name = packet.Header.Name ?? packet.Header.Value.ToString();
             Length = packet.Length;
         }
     }

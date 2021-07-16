@@ -3,17 +3,12 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
-    <PublishSingleFile>true</PublishSingleFile>
-    <SelfContained>false</SelfContained>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <PublishTrimmed>true</PublishTrimmed>
-    <TrimUnusedDependencies>true</TrimUnusedDependencies>
-    <PublishReadyToRun>true</PublishReadyToRun>
     <UseWPF>true</UseWPF>
     <AssemblyVersion>1.0.32.0</AssemblyVersion>
     <FileVersion>1.0.32.0</FileVersion>
     <StartupObject>b7.Packets.App</StartupObject>
     <Nullable>enable</Nullable>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

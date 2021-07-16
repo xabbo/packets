@@ -55,7 +55,7 @@ namespace b7.Packets.Composer
             }
             else
             {
-                if (!short.TryParse(e.Current.Value, out short headerValue))
+                if (!short.TryParse(e.Current.Value, out short headerValue) || headerValue < 0)
                     throw new FormatException($"Invalid header value {e.Current.Value}");
 
                 packet.Header = GetHeader(destination, headerValue);
@@ -219,13 +219,13 @@ namespace b7.Packets.Composer
                 throw new InvalidOperationException("Message manager is not initialized");
 
             if (destination != Destination.Unknown &&
-                _messages.TryGetHeaderByValue(destination, value, out Header? header))
+                _messages.TryGetHeaderByValue(destination, _interceptor.ClientType, value, out Header? header))
             {
                 return header;
             }
             else
             {
-                return new Header(destination, value, null);
+                return new Header(destination, value);
             }
         }
 

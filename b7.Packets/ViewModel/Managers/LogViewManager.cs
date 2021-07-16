@@ -146,6 +146,22 @@ namespace b7.Packets.ViewModel
 
         private void ToggleLogging() => IsLogging = !IsLogging;
 
+        private void AddLog(IReadOnlyPacket packet)
+        {
+            AddLog(new PacketLogViewModel
+            {
+                Packet = packet,
+                DirectionPointer = packet.Header.IsOutgoing ? ">>" : "<<",
+                Id = packet.Header.GetValue(_interceptor.ClientType),
+                IsFlashName = _interceptor.ClientType == Xabbo.ClientType.Flash,
+                IsUnityName = _interceptor.ClientType == Xabbo.ClientType.Unity,
+                IsOutgoing = packet.Header.IsOutgoing,
+                Length = packet.Length,
+                Name = packet.Header.GetName(_interceptor.ClientType) ?? "unknown",
+                Timestamp = DateTime.Now
+            });
+        }
+
         private void AddLog(PacketLogViewModel log)
         {
             if (!_context.IsSynchronized)
@@ -182,7 +198,7 @@ namespace b7.Packets.ViewModel
                 IPacket packet = _composer.ComposePacket(Destination.Client, ComposerText);
                 _interceptor.Send(packet);
 
-                AddLog(new PacketLogViewModel(_interceptor.Messages, packet));
+                AddLog(packet);
             }
             catch (Exception ex)
             {
@@ -197,7 +213,7 @@ namespace b7.Packets.ViewModel
                 IPacket packet = _composer.ComposePacket(Destination.Server, ComposerText);
                 _interceptor.Send(packet);
 
-                AddLog(new PacketLogViewModel(_interceptor.Messages, packet));
+                AddLog(packet);
             }
             catch (Exception ex)
             {
@@ -236,7 +252,7 @@ namespace b7.Packets.ViewModel
                 default: break;
             }
 
-            AddLog(new PacketLogViewModel(_interceptor.Messages, e.Packet));
+            AddLog(e.Packet);
         }
 
         public void UpdateSelection(IList selection)

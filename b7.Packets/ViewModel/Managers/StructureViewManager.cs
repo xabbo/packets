@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Data;
 using System.Windows.Media;
@@ -12,14 +15,13 @@ using GalaSoft.MvvmLight.Messaging;
 
 using Xabbo.Messages;
 
-using b7.Packets.Services;
+using b7.Packets.Util;
 
 namespace b7.Packets.ViewModel
 {
     public class StructureViewManager : ObservableObject
     {
-        private readonly IContext _context;
-
+        private PacketLogViewModel? _packetLog;
         private IReadOnlyPacket? _packet;
         private ReadOnlyMemory<byte> _data;
 
@@ -28,6 +30,20 @@ namespace b7.Packets.ViewModel
 
         public CompositeCollection DataRows { get; set; }
         public ObservableCollection<StructureItemViewModel> StructureItems { get; set; }
+
+        private string _packetName = string.Empty;
+        public string PacketName
+        {
+            get => _packetName;
+            set => Set(ref _packetName, value);
+        }
+
+        private bool? _isOutgoing;
+        public bool? IsOutgoing
+        {
+            get => _isOutgoing;
+            set => Set(ref _isOutgoing, value);
+        }
 
         private bool _canAddBool;
         public bool CanAddBool
@@ -102,13 +118,13 @@ namespace b7.Packets.ViewModel
         public ICommand UndoCommand { get; }
         public ICommand ClearCommand { get; }
 
-        public StructureViewManager(IContext context)
-        {
-            _context = context;
-            _spanMap = new Dictionary<int, List<ByteSpanViewModel>>();
+        public ICommand CopyComposedCommand { get; }
 
+        public StructureViewManager()
+        {
             _data = Array.Empty<byte>();
             _dataRows = new ObservableCollection<DataRowViewModel>();
+            _spanMap = new Dictionary<int, List<ByteSpanViewModel>>();
 
             DataRowViewModel byteOffsets = new DataRowViewModel(0) { ShowOffset = false };
             for (int i = 0; i < 16; i++)
@@ -131,6 +147,8 @@ namespace b7.Packets.ViewModel
             AddStringCommand = new RelayCommand(AddString);
             UndoCommand = new RelayCommand(Undo);
             ClearCommand = new RelayCommand(Clear);
+
+            CopyComposedCommand = new RelayCommand(CopyComposed);
 
             Messenger.Default.Register<GenericMessage<PacketLogViewModel>>(this, x => LoadPacket(x.Content));
         }
@@ -170,11 +188,60 @@ namespace b7.Packets.ViewModel
             Update();
         }
 
+        private void CopyComposed()
+        {
+            if (_packet is null || _packetLog is null) return;
+
+            int position = _packet.Position;
+            _packet.Position = 0;
+
+            StringBuilder sb = new();
+            sb.Append(_packetLog.Name);
+
+            for (int i = 0; i < StructureItems.Count; i++)
+            {
+                sb.Append(' ');
+                sb.Append(StructureItems[i].Type switch
+                {
+                    TypeCode.Boolean => _packet.ReadBool().ToString().ToLower(),
+                    TypeCode.Byte => $"b:{_packet.ReadByte()}",
+                    TypeCode.Int16 => $"s:{_packet.ReadShort()}",
+                    TypeCode.Int32 => $"{_packet.ReadInt()}",
+                    TypeCode.Single => $"{_packet.ReadFloat()}",
+                    TypeCode.Int64 => $"{_packet.ReadLong()}L",
+                    TypeCode.String => $"\"{StringUtil.Escape(_packet.ReadString())}\"",
+                    _ => throw new Exception($"Invalid structure type: {StructureItems[i].Type}.")
+                });
+            }
+
+            if (_packet.Available > 0)
+            {
+                Span<byte> buffer = stackalloc byte[_packet.Available];
+                _packet.ReadBytes(buffer);
+                sb.Append(" [");
+                for (int i = 0; i < buffer.Length; i++)
+                {
+                    if (i > 0)
+                        sb.Append(' ');
+                    sb.Append($"{buffer[i]:x2}");
+                }
+                sb.Append(']');
+            }
+
+            _packet.Position = position;
+
+            try { Clipboard.SetText(sb.ToString()); } catch { }
+        }
+
         public void LoadPacket(PacketLogViewModel packetLog)
         {
+            _packetLog = packetLog;
             _packet = packetLog.Packet;
             _packet.Position = 0;
             _data = _packet.GetBuffer();
+
+            PacketName = packetLog.Name;
+            IsOutgoing = packetLog.IsOutgoing;
 
             _spanMap.Clear();
             _dataRows.Clear();

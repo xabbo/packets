@@ -260,11 +260,42 @@
 
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <ListView Margin="2" ItemsSource="{Binding StructureItems}">
+            <DockPanel Grid.Row="0">
+                <Button DockPanel.Dock="Right" Margin="2" Padding="2" Command="{Binding CopyComposedCommand}" Content="Copy composed">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="2" />
+                                </Style>
+                            </Style.Resources>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <TextBlock DockPanel.Dock="Left" Margin="2" VerticalAlignment="Center"
+                           FontSize="14" Text="{Binding PacketName}">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="DarkSlateGray" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsOutgoing}" Value="True">
+                                    <Setter Property="Foreground" Value="DarkCyan" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsOutgoing}" Value="False">
+                                    <Setter Property="Foreground" Value="DarkRed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </DockPanel>
+
+            <ListView Grid.Row="1" Margin="2" ItemsSource="{Binding StructureItems}">
                 <ListView.Resources>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Foreground" Value="DarkSlateGray" />
@@ -329,7 +360,7 @@
                 </ListView.View>
             </ListView>
 
-            <WrapPanel Grid.Row="1" Orientation="Horizontal">
+            <WrapPanel Grid.Row="2" Orientation="Horizontal">
                 <WrapPanel.Resources>
                     <Style TargetType="{x:Type Button}">
                         <Style.Resources>

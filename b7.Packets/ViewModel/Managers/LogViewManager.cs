@@ -285,7 +285,7 @@ namespace b7.Packets.ViewModel
             if (packetLog.Packet.Header.Name != null)
             {
                 sb.Append(" (");
-                sb.Append(packetLog.Packet.Header.Value);
+                sb.Append(packetLog.Packet.Header.GetValue(_interceptor.ClientType));
                 sb.Append(')');
             }
 

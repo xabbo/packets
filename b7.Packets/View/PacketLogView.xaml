@@ -7,6 +7,7 @@
              xmlns:root="clr-namespace:b7.Packets"
              xmlns:local="clr-namespace:b7.Packets.View"
              xmlns:global="clr-namespace:b7.Packets"
+             xmlns:xabboMessages="clr-namespace:Xabbo.Messages;assembly=Xabbo.Common"
              xmlns:viewModel="clr-namespace:b7.Packets.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
@@ -86,7 +87,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Width="120" Header="name">
+                                <GridViewColumn Width="180" Header="name">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid>
@@ -97,7 +98,8 @@
                                                 <Border Margin="4,0" Padding="2,0"
                                                         HorizontalAlignment="Right"
                                                         CornerRadius="2"
-                                                        Opacity="0.6">
+                                                        Opacity="0.6"
+                                                        Visibility="Collapsed">
                                                     <Border.Style>
                                                         <Style TargetType="{x:Type Border}">
                                                             <Style.Triggers>
@@ -225,9 +227,9 @@
                 <ComboBox Margin="2" Padding="8,2" Width="100"
                           HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                           SelectedItem="{Binding Direction}">
-                    <root:Direction>Incoming</root:Direction>
-                    <root:Direction>Outgoing</root:Direction>
-                    <root:Direction>Both</root:Direction>
+                    <xabboMessages:Direction>Incoming</xabboMessages:Direction>
+                    <xabboMessages:Direction>Outgoing</xabboMessages:Direction>
+                    <xabboMessages:Direction>Both</xabboMessages:Direction>
                 </ComboBox>
                 <Button Margin="2" Padding="0" Width="60"
                         HorizontalContentAlignment="Stretch"

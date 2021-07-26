@@ -24,7 +24,7 @@
                 <view:LogView x:Name="packetLogView" DataContext="{Binding Log}" />
             </TabItem>
             <TabItem x:Name="messagesTab" Header="Messages">
-                <view:MessagesView />
+                <view:MessagesView DataContext="{Binding Messages}" />
             </TabItem>
             <TabItem x:Name="structureTab" Header="Structure">
                 <view:StructureView x:Name="structuralizerView" DataContext="{Binding Structure}" />

@@ -18,15 +18,19 @@ namespace b7.Packets.ViewModel
         public event EventHandler? OpenStructureView;
 
         public LogViewManager Log { get; }
+        public MessagesViewManager Messages { get; }
         public StructureViewManager Structure { get; }
 
         public MainViewManager(IContext context, IRemoteInterceptor interceptor,
-            LogViewManager log, StructureViewManager structure)
+            LogViewManager log,
+            MessagesViewManager messages,
+            StructureViewManager structure)
         {
             _context = context;
             _interceptor = interceptor;
 
             Log = log;
+            Messages = messages;
             Structure = structure;
         }
 

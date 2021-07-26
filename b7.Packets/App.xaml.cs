@@ -44,7 +44,9 @@ namespace b7.Packets
                             Author = "b7"
                         });
 
-                        services.AddSingleton<IRemoteInterceptor, GEarthExtension>();
+                        services.AddSingleton<GEarthExtension>();
+                        services.AddSingleton<IInterceptor>(provider => provider.GetRequiredService<GEarthExtension>());
+                        services.AddSingleton<IRemoteInterceptor>(provider => provider.GetRequiredService<GEarthExtension>());
                     }
                     break;
                 default:
@@ -55,6 +57,7 @@ namespace b7.Packets
 
             services.AddSingleton<MainViewManager>();
             services.AddSingleton<LogViewManager>();
+            services.AddSingleton<MessagesViewManager>();
             services.AddSingleton<StructureViewManager>();
 
             services.AddSingleton<MainWindow>();

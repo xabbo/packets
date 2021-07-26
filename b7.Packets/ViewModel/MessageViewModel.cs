@@ -8,12 +8,12 @@ namespace b7.Packets.ViewModel
 {
     public class MessageViewModel : ObservableObject
     {
-        public Header Header { get; }
-        public Destination Destination => Header.Destination;
-        public bool IsOutgoing => Header.Destination == Destination.Server;
-        public bool IsIncoming => Header.Destination == Destination.Client;
-        public short Value => Header.Value ?? -1;
-        public string? Name => Header.Name;
+        public Destination Destination { get; init; }
+        public bool IsOutgoing => Destination == Destination.Server;
+        public bool IsIncoming => Destination == Destination.Client;
+        public Direction Direction => Destination.ToDirection();
+        public short Header { get; init; }
+        public string Name { get; init; } = string.Empty;
 
         private bool _isHidden;
         public bool IsHidden
@@ -29,9 +29,6 @@ namespace b7.Packets.ViewModel
             set => Set(ref _isBlocked, value);
         }
 
-        public MessageViewModel(Header header)
-        {
-            Header = header;
-        }
+        public MessageViewModel() { }
     }
 }

@@ -18,7 +18,19 @@ namespace b7.Packets.ViewModel
         private readonly IContext _context;
         private readonly IRemoteInterceptor _interceptor;
         private readonly ObservableCollection<MessageViewModel> _messages;
+
         public ICollectionView Messages { get; }
+
+        private string _filterText = string.Empty;
+        public string FilterText
+        {
+            get => _filterText;
+            set
+            {
+                if (Set(ref _filterText, value))
+                    Messages.Refresh();
+            }
+        }
 
         public MessagesViewManager(IContext context, IRemoteInterceptor interceptor)
         {
@@ -26,9 +38,24 @@ namespace b7.Packets.ViewModel
             _interceptor = interceptor;
             _messages = new ObservableCollection<MessageViewModel>();
             Messages = CollectionViewSource.GetDefaultView(_messages);
+            Messages.Filter = FilterMessages;
 
             _interceptor.Connected += OnConnected;
             _interceptor.Disconnected += OnDisconnected;
+        }
+
+        private bool FilterMessages(object obj)
+        {
+            if (obj is not MessageViewModel message) return false;
+
+            if (string.IsNullOrWhiteSpace(FilterText))
+            {
+                return true;
+            }
+            else
+            {
+                return message.Name.Contains(FilterText, StringComparison.OrdinalIgnoreCase);
+            }
         }
 
         private void OnConnected(object? sender, GameConnectedEventArgs e)

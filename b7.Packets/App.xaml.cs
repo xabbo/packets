@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Reflection;
 
@@ -17,6 +18,12 @@ namespace b7.Packets
 {
     public partial class App : Application
     {
+        private static readonly Dictionary<string, string> _switchMappings = new()
+        {
+            ["-p"] = "Xabbo:Interceptor:Port",
+            ["-s"] = "Xabbo:Interceptor:Service"
+        };
+
         private IHost? _host = null;
 
         public App() { }
@@ -27,11 +34,9 @@ namespace b7.Packets
                 provider => ActivatorUtilities.CreateInstance<WpfContext>(provider, Dispatcher)
             );
 
-            services.AddSingleton<IMessageManager, UnifiedMessageManager>(provider =>
-                new UnifiedMessageManager(context.Configuration.GetValue("Messages:MapFilePath", "messages.ini"))
-            );
+            services.AddSingleton<IMessageManager, UnifiedMessageManager>();
 
-            string interceptorService = context.Configuration.GetValue<string>("Interceptor:Service");
+            string interceptorService = context.Configuration.GetValue<string>("Xabbo:Interceptor:Service", "g-earth");
             switch (interceptorService.ToLower())
             {
                 case "g-earth":
@@ -65,7 +70,11 @@ namespace b7.Packets
 
         private IHostBuilder CreateHostBuilder(string[] args)
         {
-            return Host.CreateDefaultBuilder(args)
+            return Host.CreateDefaultBuilder()
+                .ConfigureAppConfiguration(config =>
+                {
+                    config.AddCommandLine(args, _switchMappings);
+                })
                 .ConfigureServices(ConfigureServices);
         }
 

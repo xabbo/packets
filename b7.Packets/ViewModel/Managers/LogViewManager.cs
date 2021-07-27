@@ -28,6 +28,9 @@ namespace b7.Packets.ViewModel
         private readonly IContext _context;
         private readonly IRemoteInterceptor _interceptor;
 
+        protected Incoming In => _interceptor.Messages.In;
+        protected Outgoing Out => _interceptor.Messages.Out;
+
         private readonly PacketComposer _composer;
 
         private readonly ObservableCollection<PacketLogViewModel> _logs;
@@ -148,6 +151,10 @@ namespace b7.Packets.ViewModel
 
         private void AddLog(IReadOnlyPacket packet)
         {
+            string? name = packet.Header.GetName(_interceptor.ClientType);
+            if (name is null)
+                name = packet.Header.GetValue(_interceptor.ClientType).ToString();
+
             AddLog(new PacketLogViewModel
             {
                 Packet = packet,
@@ -157,7 +164,7 @@ namespace b7.Packets.ViewModel
                 IsUnityName = _interceptor.ClientType == Xabbo.ClientType.Unity,
                 IsOutgoing = packet.Header.IsOutgoing,
                 Length = packet.Length,
-                Name = packet.Header.GetName(_interceptor.ClientType) ?? "unknown",
+                Name = name,
                 Timestamp = DateTime.Now
             });
         }
@@ -240,16 +247,12 @@ namespace b7.Packets.ViewModel
 
             // TODO add a hidden flag to messages and ignore them here, hard-coded for now
 
-            switch (e.Packet.Header.Name)
+            if (e.Packet.Header == In.Ping ||
+                e.Packet.Header == Out.Pong ||
+                e.Packet.Header == In.ClientLatencyPingResponse ||
+                e.Packet.Header == Out.ClientLatencyPingRequest)
             {
-                case "Ping":
-                case "Pong":
-                case "ClientLatencyPingRequest":
-                case "ClientLatencyPingResponse":
-                case "LogToEventLog":
-                case "AntiSpamTriggered":
-                    return;
-                default: break;
+                return;
             }
 
             AddLog(e.Packet);

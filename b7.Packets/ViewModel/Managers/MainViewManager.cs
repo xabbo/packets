@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Reflection;
 
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
@@ -17,6 +18,13 @@ namespace b7.Packets.ViewModel
 
         public event EventHandler? OpenStructureView;
 
+        private string _title = "b7 packets";
+        public string Title
+        {
+            get => _title;
+            set => Set(ref _title, value);
+        }
+
         public LogViewManager Log { get; }
         public MessagesViewManager Messages { get; }
         public StructureViewManager Structure { get; }
@@ -32,6 +40,13 @@ namespace b7.Packets.ViewModel
             Log = log;
             Messages = messages;
             Structure = structure;
+
+            Version? version = Assembly.GetExecutingAssembly().GetName().Version;
+            if (version is not null) Title += $" v{version.ToString(3)}";
+
+#if DEBUG
+            Title += " [DEBUG]";
+#endif
         }
 
         public Task InitializeAsync()

@@ -10,7 +10,7 @@
         d:DataContext="{d:DesignInstance Type={x:Type viewModel:MainViewManager}}"
         Title="{Binding Title}" Height="520" Width="940"
         Topmost="{Binding ElementName=checkBoxTopMost, Path=IsChecked}"
-        FontSize="11" FontFamily="Hack,Consolas"
+        FontFamily="{StaticResource FontFixed}" FontSize="11"
         UseLayoutRounding="True">
     <Grid>
         <CheckBox x:Name="checkBoxTopMost"

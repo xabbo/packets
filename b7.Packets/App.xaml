@@ -5,6 +5,9 @@
              xmlns:svc="clr-namespace:b7.Packets.Services"
              xmlns:converters="clr-namespace:b7.Packets.WPF.Converters">
     <Application.Resources>
+        <!-- Fonts -->
+        <FontFamily x:Key="FontUI">Segoe UI</FontFamily>
+        <FontFamily x:Key="FontFixed">Hack,Consolas</FontFamily>
         <!-- Converters -->
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
         <!-- Colors -->

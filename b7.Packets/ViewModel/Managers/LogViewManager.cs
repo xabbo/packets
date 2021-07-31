@@ -86,6 +86,34 @@ namespace b7.Packets.ViewModel
             }
         }
 
+        private bool _blockPackets;
+        public bool BlockPackets
+        {
+            get => _blockPackets;
+            set => Set(ref _blockPackets, value);
+        }
+
+        private bool _blockIncoming;
+        public bool BlockIncoming
+        {
+            get => _blockIncoming;
+            set => Set(ref _blockIncoming, value);
+        }
+
+        private bool _blockOutgoing = true;
+        public bool BlockOutgoing
+        {
+            get => _blockOutgoing;
+            set => Set(ref _blockOutgoing, value);
+        }
+
+        private bool _blockBoth;
+        public bool BlockBoth
+        {
+            get => _blockBoth;
+            set => Set(ref _blockBoth, value);
+        }
+
         private string _composerText = string.Empty;
         public string ComposerText
         {
@@ -149,23 +177,24 @@ namespace b7.Packets.ViewModel
 
         private void ToggleLogging() => IsLogging = !IsLogging;
 
-        private void AddLog(IReadOnlyPacket packet)
+        private void AddLog(InterceptArgs e)
         {
-            string? name = packet.Header.GetName(_interceptor.ClientType);
+            string? name = e.Packet.Header.GetName(e.Client);
             if (name is null)
-                name = packet.Header.GetValue(_interceptor.ClientType).ToString();
+                name = e.Packet.Header.GetValue(e.Client).ToString();
 
             AddLog(new PacketLogViewModel
             {
-                Packet = packet,
-                DirectionPointer = packet.Header.IsOutgoing ? ">>" : "<<",
-                Id = packet.Header.GetValue(_interceptor.ClientType),
+                Packet = e.Packet,
+                DirectionPointer = e.IsOutgoing ? ">>" : "<<",
+                Id = e.Packet.Header.GetValue(_interceptor.ClientType),
                 IsFlashName = _interceptor.ClientType == Xabbo.ClientType.Flash,
                 IsUnityName = _interceptor.ClientType == Xabbo.ClientType.Unity,
-                IsOutgoing = packet.Header.IsOutgoing,
-                Length = packet.Length,
+                IsOutgoing = e.Packet.Header.IsOutgoing,
+                Length = e.Packet.Length,
                 Name = name,
-                Timestamp = DateTime.Now
+                Timestamp = DateTime.Now,
+                IsBlocked = e.IsBlocked
             });
         }
 
@@ -205,7 +234,7 @@ namespace b7.Packets.ViewModel
                 IPacket packet = _composer.ComposePacket(Destination.Client, ComposerText);
                 _interceptor.Send(packet);
 
-                AddLog(packet);
+                AddLog(new InterceptArgs(Destination.Client, _interceptor.ClientType, -1, packet));
             }
             catch (Exception ex)
             {
@@ -220,7 +249,7 @@ namespace b7.Packets.ViewModel
                 IPacket packet = _composer.ComposePacket(Destination.Server, ComposerText);
                 _interceptor.Send(packet);
 
-                AddLog(packet);
+                AddLog(new InterceptArgs(Destination.Server, _interceptor.ClientType, -1, packet));
             }
             catch (Exception ex)
             {
@@ -241,6 +270,23 @@ namespace b7.Packets.ViewModel
 
         private void OnIntercepted(object? sender, InterceptArgs e)
         {
+            bool isEssentialPacket =
+                e.Packet.Header == In.Ping ||
+                e.Packet.Header == Out.Pong ||
+                e.Packet.Header == In.ClientLatencyPingResponse ||
+                e.Packet.Header == Out.ClientLatencyPingRequest;
+
+            if (BlockPackets)
+            {
+                if (!isEssentialPacket &&
+                    (BlockBoth ||
+                    (e.Destination == Destination.Server && BlockOutgoing) ||
+                    (e.Destination == Destination.Client && BlockIncoming)))
+                {
+                    e.Block();
+                }
+            }
+
             if (!IsLogging) return;
             if (e.IsIncoming && !Direction.HasFlag(Direction.Incoming)) return;
             if (e.IsOutgoing && !Direction.HasFlag(Direction.Outgoing)) return;
@@ -255,7 +301,7 @@ namespace b7.Packets.ViewModel
                 return;
             }
 
-            AddLog(e.Packet);
+            AddLog(e);
         }
 
         public void UpdateSelection(IList selection)

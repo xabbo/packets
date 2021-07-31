@@ -20,6 +20,13 @@ namespace b7.Packets.ViewModel
         public bool IsFlashName { get; init; }
         public bool IsUnityName { get; init; }
 
+        private bool _isBlocked;
+        public bool IsBlocked
+        {
+            get => _isBlocked;
+            set => Set(ref _isBlocked, value);
+        }
+
         public PacketLogViewModel() { }
     }
 }

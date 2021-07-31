@@ -31,6 +31,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <DockPanel>
@@ -63,6 +64,13 @@
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding IsOutgoing}" Value="False">
                                     <Setter Property="Foreground" Value="DarkRed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsBlocked}" Value="True">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <SolidColorBrush Color="Red" Opacity="0.3" />
+                                        </Setter.Value>
+                                    </Setter>
                                 </DataTrigger>
                             </Style.Triggers>
                             <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick" />
@@ -156,6 +164,33 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
+                
+                <!-- Global blocking -->
+                <WrapPanel Grid.Row="2" HorizontalAlignment="Right">
+                    <CheckBox Margin="2"
+                              VerticalAlignment="Center"
+                              VerticalContentAlignment="Center"
+                              Content="Block"
+                              IsChecked="{Binding BlockPackets}" />
+                    <RadioButton Margin="2"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 GroupName="BlockDirection"
+                                 Content="Incoming"
+                                 IsChecked="{Binding BlockIncoming}" />
+                    <RadioButton Margin="2"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 GroupName="BlockDirection"
+                                 Content="Outgoing"
+                                 IsChecked="{Binding BlockOutgoing}" />
+                    <RadioButton Margin="2"
+                                 VerticalAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 GroupName="BlockDirection"
+                                 Content="Both"
+                                 IsChecked="{Binding BlockBoth}" />
+                </WrapPanel>
             </Grid>
 
             <GridSplitter Grid.Column="1" Margin="-2"
@@ -163,7 +198,9 @@
                           VerticalAlignment="Stretch"
                           Background="Transparent" />
 
-            <TextBox Margin="2" Grid.Column="2"
+            <TextBox
+                 Grid.Column="2"
+                 Margin="2" Padding="2"
                  Text="{Binding PacketInfo}"
                  VerticalScrollBarVisibility="Visible"
                  HorizontalScrollBarVisibility="Auto"

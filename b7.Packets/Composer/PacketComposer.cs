@@ -38,7 +38,7 @@ namespace b7.Packets.Composer
 
         public IPacket ComposePacket(Destination destination, string structure)
         {
-            Packet packet = new();
+            Packet packet = new(Header.Unknown);
 
             IEnumerator<Token> e = _tokenizer
                 .Tokenize(structure)
@@ -219,7 +219,7 @@ namespace b7.Packets.Composer
                 throw new InvalidOperationException("Message manager is not initialized");
 
             if (destination != Destination.Unknown &&
-                _messages.TryGetHeaderByValue(destination, _interceptor.ClientType, value, out Header? header))
+                _messages.TryGetHeaderByValue(destination, _interceptor.Client, value, out Header? header))
             {
                 return header;
             }

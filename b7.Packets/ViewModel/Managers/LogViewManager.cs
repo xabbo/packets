@@ -12,14 +12,13 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
+using Xabbo.Common;
 using Xabbo.Interceptor;
 using Xabbo.Messages;
 
 using b7.Packets.Composer;
 using b7.Packets.Services;
 using b7.Packets.Util;
-
-#pragma warning disable CA2012 // Use ValueTasks correctly
 
 namespace b7.Packets.ViewModel
 {
@@ -179,17 +178,17 @@ namespace b7.Packets.ViewModel
 
         private void AddLog(InterceptArgs e)
         {
-            string? name = e.Packet.Header.GetName(e.Client);
+            string? name = e.Packet.Header.GetName(e.Packet.Protocol);
             if (name is null)
-                name = e.Packet.Header.GetValue(e.Client).ToString();
+                name = e.Packet.Header.GetValue(e.Packet.Protocol).ToString();
 
             AddLog(new PacketLogViewModel
             {
-                Packet = e.Packet,
+                Packet = e.Packet.Copy(),
                 DirectionPointer = e.IsOutgoing ? ">>" : "<<",
-                Id = e.Packet.Header.GetValue(_interceptor.ClientType),
-                IsFlashName = _interceptor.ClientType == Xabbo.ClientType.Flash,
-                IsUnityName = _interceptor.ClientType == Xabbo.ClientType.Unity,
+                Id = e.Packet.Header.GetValue(_interceptor.Client),
+                IsFlashName = _interceptor.Client == ClientType.Flash,
+                IsUnityName = _interceptor.Client == ClientType.Unity,
                 IsOutgoing = e.Packet.Header.IsOutgoing,
                 Length = e.Packet.Length,
                 Name = name,
@@ -234,7 +233,7 @@ namespace b7.Packets.ViewModel
                 IPacket packet = _composer.ComposePacket(Destination.Client, ComposerText);
                 _interceptor.Send(packet);
 
-                AddLog(new InterceptArgs(Destination.Client, _interceptor.ClientType, -1, packet));
+                AddLog(new InterceptArgs(_interceptor, Destination.Client, packet));
             }
             catch (Exception ex)
             {
@@ -249,7 +248,7 @@ namespace b7.Packets.ViewModel
                 IPacket packet = _composer.ComposePacket(Destination.Server, ComposerText);
                 _interceptor.Send(packet);
 
-                AddLog(new InterceptArgs(Destination.Server, _interceptor.ClientType, -1, packet));
+                AddLog(new InterceptArgs(_interceptor, Destination.Server, packet));
             }
             catch (Exception ex)
             {
@@ -334,7 +333,7 @@ namespace b7.Packets.ViewModel
             if (packetLog.Packet.Header.Name != null)
             {
                 sb.Append(" (");
-                sb.Append(packetLog.Packet.Header.GetValue(_interceptor.ClientType));
+                sb.Append(packetLog.Packet.Header.GetValue(_interceptor.Client));
                 sb.Append(')');
             }
 
@@ -343,7 +342,7 @@ namespace b7.Packets.ViewModel
                 sb.AppendLine();
                 sb.AppendLine();
 
-                ReadOnlySpan<byte> data = packet.GetBuffer().Span;
+                ReadOnlySpan<byte> data = packet.Buffer;
 
                 int rows = (data.Length - 1) / 16 + 1;
                 for (int i = 0; i < rows; i++)

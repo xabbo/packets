@@ -217,7 +217,7 @@ namespace b7.Packets.ViewModel
             if (_packet.Available > 0)
             {
                 Span<byte> buffer = stackalloc byte[_packet.Available];
-                _packet.ReadBytes(buffer);
+                _packet.Read(buffer);
                 sb.Append(" [");
                 for (int i = 0; i < buffer.Length; i++)
                 {
@@ -238,7 +238,7 @@ namespace b7.Packets.ViewModel
             _packetLog = packetLog;
             _packet = packetLog.Packet;
             _packet.Position = 0;
-            _data = _packet.GetBuffer();
+            _data = _packet.GetMemory();
 
             PacketName = packetLog.Name;
             IsOutgoing = packetLog.IsOutgoing;

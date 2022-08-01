@@ -43,7 +43,7 @@ namespace b7.Packets
                     {
                         services.AddSingleton(new GEarthOptions
                         {
-                            Title = "b7 packets",
+                            Name = "b7 packets",
                             Description = "a packet logger",
                             Version = Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "?",
                             Author = "b7"
